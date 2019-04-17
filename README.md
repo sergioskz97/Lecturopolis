@@ -1,1 +1,1 @@
-# lecturopolis
+# Lecturopolis
