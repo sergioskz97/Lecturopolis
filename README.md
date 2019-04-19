@@ -5,9 +5,9 @@ _[EN]Lecturópolis is a web page aimed at book enthusiasts where they can find a
 
 # Made with / Hecho con:
 
-* [NodeJS] (https://nodejs.org/es/)
-* [Heroku] (https://www.heroku.com/)
-* [Materialize] (https://materializecss.com/)
+* [NodeJS](https://nodejs.org/es/)
+* [Heroku](https://www.heroku.com/)
+* [Materialize](https://materializecss.com/)
 
 # Contributors / Contribuidores ✒️
 

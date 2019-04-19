@@ -10,19 +10,23 @@
     </head>
 
     <body>
+
+        <!-- Header section -->
         <header>          
             <nav>
                 <div class="nav-fixed">
-                    <ul class="left hide-on-med-and-down">
-                        <li><a href="#">Categorías</a></li>
-                        <li><a href="#">Foro</a></li>
-                    </ul>
-                    <a href="#!" class="brand-logo center" style="color:#c3073f; font-family: ave; font-size: 30px;">Lecturópolis</a>
-                    <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="#">Eventos</a></li>
-                        <li><a href="#">Contacto</a></li>
-                    </ul>
+                    
+                    <div class="nav-wrapper">
+                        <ul>
+                            <li class="hide-on-med-and-down"><a href="#">Categorías</a></li>
+                            <li class="hide-on-med-and-down"><a href="#">Foro</a></li>
+                            <li><a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a></li>
+                            <li><a href="index.html" style="color:#c3073f; font-family: ave; font-size: 30px;">Lecturópolis</a></li>
+                            <li><a href="#" class="sidenav-trigger"><i class="material-icons">person</i></a></li>
+                            <li class="hide-on-med-and-down"><a href="#">Eventos</a></li>
+                            <li class="hide-on-med-and-down"><a href="#">Contacto</a></li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
             
@@ -35,88 +39,53 @@
         
         </header>
 
+        <!-- Content section -->
         <main>
-
-            <div class="row">
-                <div class="col s2"></div>
-                <div class="col s8" style="text-align:center;">
-
-                    <div class="presentation-container">
-                        <div class="presentation">
-
-                            <div class="left-main">
-                                
-                            </div>
-    
-                            <div class="right-up-main">
-
-                                <h1>Super oferta</h1>
-                                <hr>
-                                <p>Compra dos libros por el precio de uno</p>
-                               
-                            </div>
-    
-                            <div class="right-down-main">
-                                
-                            </div>
-    
-                        </div>
+            <!-- Principal grid -->
+            <div class="gridwr">
+                <section class="top-container">
+                    <header class="showcase">
+                        <h1>
+                            Lecturópolis
+                        </h1>
+                        <p>
+                            El hogar de la buena lectura
+                        </p>
+                        <a href="#" class="button">Más información</a>
+                    </header>
+                    <div class="top-box top-box-a">
+                        <h4>Suscripción</h4>
+                        <p class="price">20€/año</p>
+                        <a href="" class="button">Comenzar</a>
                     </div>
-                   
-                    <div class="products-header">
-                        <h1>Productos destacados</h1>
-                        <p>Los productos más vendidos del último mes a un solo click de distancia.</p>
+                    <div class="top-box top-box-b">
+                        <h4>Suscripción vip</h4>
+                        <p class="price">$40€/año</p>
+                        <a href="" class="button">Comenzar</a>
                     </div>
+                </section>
 
-                    <div class="products">
-
-                        <div class="product-item">
-                            <figure>
-                                <img src="img/example.jpg" alt="product-image">
-                                <figcaption>Fariña</figcaption>
-                                <figcaption>15€</figcaption>
-                            </figure>
-                        </div>
-
-                        <div class="product-item">
-                            <figure>
-                                <img src="img/example.jpg" alt="product-image">
-                                <figcaption>Fariña</figcaption>
-                                <figcaption>10€</figcaption>
-                            </figure>
-                        </div>
-
-                        <div class="product-item">
-                            <figure>
-                                <img src="img/example.jpg" alt="product-image">
-                                <figcaption>Fariña</figcaption>
-                                <figcaption>20€</figcaption>
-                            </figure>
-                        </div>
-
-                        <div class="product-item">
-                            <figure>
-                                <img src="img/example.jpg" alt="product-image">
-                                <figcaption>Fariña</figcaption>
-                                <figcaption>20€</figcaption>
-                            </figure>
-                        </div>
-
+                <section class="boxes">
+                    <div class="box">
+                        <i class="material-icons large">people</i>
+                        <h3>Apoyanos</h3>
+                        <p>Puedes realizar donaciones para ayudar en el desarrollo de esta aplicación.</p>
                     </div>
-
-                </div>
-                <div class="col s2"></div>
+    
+                    <div class="box">
+                        <i class="material-icons large">accessibility</i>
+                        <h3>Accesibilidad</h3>
+                        <p>Esta página tiene como objetivo llegar a todo tipo de públicos por lo cual la accesibilidad es muy importante para nosotros.</p>
+                    </div>
+                </section>
             </div>
+            <!-- End of principal grid -->
+
         </main>
 
-        <footer class="page-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="container">
-                        © 2019 Lecturópolis
-                    </div>
-                </div>
-            </div>
+        <!-- Footer section -->
+        <footer>
+
         </footer>
 
         <script type="text/javascript" src="js/materialize.min.js"></script>
