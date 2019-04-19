@@ -25,6 +25,8 @@ er{
 
 main{
     flex: 1 0 auto;
+    margin: 30px 50px;
+    text-align: center;
 }
 
 h1{
@@ -40,10 +42,6 @@ h2{
 
 p{
     font-family: codeb;
-}
-
-main{
-    margin: 30px 50px;
 }
 
 #main-vid{
@@ -97,7 +95,7 @@ main{
 }
 
 .product-item{
-    width: 25%;
+    width: 100%;
     display: inline-block;
     margin-right: 6px;
     text-align: center;
@@ -106,7 +104,7 @@ main{
 .product-item figure{
     font-family: "Franklin Gothic Medium";
 	color: rgba(89, 89, 89, 1);
-	font-size: 0.8rem;
+	font-size: 1.2rem;
 	font-weight: 600;
 	letter-spacing: 0.02rem;
 	text-align: center;
@@ -310,13 +308,11 @@ main{
   }
   
   .box {
-    background: var(--primary);
     text-align: center;
     padding: 1.5rem 2rem;
     box-shadow: var(--shadow);
   }
   
-  /* Info */
   .info {
     background: var(--primary);
     box-shadow: var(--shadow);
@@ -326,7 +322,6 @@ main{
     padding: 3rem;
   }
   
-  /* Portfolio */
   .portfolio {
     display: grid;
     grid-gap: 20px;
@@ -338,7 +333,6 @@ main{
     box-shadow: var(--shadow);
   }
   
-  /* Media Queries */
   @media (max-width: 700px) {
     .top-container {
       grid-template-areas:
@@ -374,3 +368,25 @@ main{
     }
   }
   
+  /* Products css variables */
+.product-boxes {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.box-product {
+    text-align: center;
+    padding: 1.5rem 2rem;
+}
+
+.gridwr hr{
+    width: 80%;
+    height: 4px;
+    border: none;
+    background-color: #c3073f;
+    color: #c3073f;
+}
+.gridwr p{
+    font-size: 25px;
+}
