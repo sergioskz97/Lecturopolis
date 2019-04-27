@@ -1,0 +1,65 @@
+<html lang="es">
+
+    <head>
+        <title>Lecturópolis</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/materialize.css">
+        <link href="../img/logo.png" rel="icon" type="image/x-icon" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $("#headersrc").load("header.html");
+            });
+        </script>
+    </head>
+
+    <body>
+        <header id="headersrc"></header>
+
+        <main>
+            <table class="centered responsive-table">
+                <thead>
+                    <tr>
+                        <th>Evento</th>
+                        <th>Tipo</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+        
+                <tbody>
+                    <tr>
+                    <td>Barcelonismes</td>
+                    <td>Presentación</td>
+                    <td>01 abril 2019</td>
+                    </tr>
+                    <tr>
+                    <td>Viento azul</td>
+                    <td>Presentación</td>
+                    <td>01 abril 2019</td>
+                    </tr>
+                    <tr>
+                    <td>Todo saldra birn</td>
+                    <td>Firma de libros</td>
+                    <td>02 abril 2019</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/materialize.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.sidenav');
+                var instances = M.Sidenav.init(elems    );
+            });
+        </script>
+    </body>
+
+    <footer>
+
+    </footer>
+
+</html>
