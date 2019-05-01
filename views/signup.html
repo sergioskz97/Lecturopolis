@@ -1,0 +1,75 @@
+<html lang="es">
+
+    <head>
+        <title>Lecturópolis</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/materialize.css">
+        <link href="img/logo.png" rel="icon" type="image/x-icon" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $("#headersrc").load("header.html");
+            });
+        </script>
+    </head>
+
+    <body>
+        <header id="headersrc"></header>
+        
+        <div class="center-align login-div">
+            <form action="/registrarse" method="POST">
+
+                <h1>Login</h1>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Placeholder" name="name" type="text" class="validate">
+                        <label for="name">Nombre</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input placeholder="Placeholder" name="surname" type="text" class="validate">
+                        <label for="surname">Apellidos</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input placeholder="Placeholder" name="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input placeholder="Placeholder" name="password" type="password" class="validate">
+                        <label for="password">Contraseña</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input placeholder="Placeholder" name="cpassword" type="password" class="validate">
+                        <label for="cpassword">Confirmar contraseña</label>
+                    </div>
+                </div>
+
+                <button class="login-btn">Registrarse</button>
+
+                <br>
+                <br>
+
+                <a href="login.html" class="col s6">Iniciar sesión</a>
+
+                <br>
+
+            </form>
+        </div>
+
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/materialize.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.sidenav');
+                var instances = M.Sidenav.init(elems    );
+            });
+        </script>
+    </body>
+
+</html>

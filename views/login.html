@@ -17,49 +17,44 @@
 
     <body>
         <header id="headersrc"></header>
-
-        <main>
-            <table class="centered responsive-table">
-                <thead>
-                    <tr>
-                        <th>Evento</th>
-                        <th>Tipo</th>
-                        <th>Fecha</th>
-                    </tr>
-                </thead>
         
-                <tbody>
-                    <tr>
-                    <td>Barcelonismes</td>
-                    <td>Presentación</td>
-                    <td>01 abril 2019</td>
-                    </tr>
-                    <tr>
-                    <td>Viento azul</td>
-                    <td>Presentación</td>
-                    <td>01 abril 2019</td>
-                    </tr>
-                    <tr>
-                    <td>Todo saldra bien</td>
-                    <td>Firma de libros</td>
-                    <td>02 abril 2019</td>
-                    </tr>
-                </tbody>
-            </table>
-        </main>
+        <div class="center-align login-div">
+            <form action="." method="">
+
+                <h1>Login</h1>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Placeholder" id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input placeholder="Placeholder" id="password" type="password" class="validate">
+                        <label for="password">Contraseña</label>
+                    </div>
+                </div>
+
+                <button class="login-btn">Iniciar sesión</button>
+
+                <br>
+                <br>
+
+                <a href="signup.html" class="col s6">Registrate</a>
+
+                <br>
+
+            </form>
+        </div>
 
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <script type="text/javascript" src="js/materialize.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 var elems = document.querySelectorAll('.sidenav');
-                var instances = M.Sidenav.init(elems);
+                var instances = M.Sidenav.init(elems    );
             });
         </script>
     </body>
-
-    <footer>
-
-    </footer>
 
 </html>

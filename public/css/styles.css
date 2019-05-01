@@ -25,7 +25,7 @@ er{
 
 main{
     flex: 1 0 auto;
-    margin: 30px 10%;
+    margin: 2% 10%;
     text-align: center;
 }
 
@@ -389,4 +389,30 @@ p{
 }
 .gridwr p{
     font-size: 25px;
+}
+
+/* Login css variables */
+
+.login-div{
+    width: 90%;
+    flex: 1 0 auto;
+    margin: 5% auto;  
+    max-width: 400px;
+    text-align: center;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: var(--shadow);
+}
+
+.login-div a{
+    color: #343434;
+}
+
+.login-btn{
+    background: #343434;
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: 0;
+    width: 100%;
 }
