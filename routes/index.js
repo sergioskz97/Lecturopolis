@@ -1,6 +1,7 @@
 const express = require('express');
+const passport = require('passport')
 const router = express.Router();
-const User = require('../models/user');
+const User = require('../models/User');
 
 router.get('/', (req, res) => {
     res.render('index');
@@ -16,31 +17,42 @@ router.get('/registrarse', (req, res) => {
 
 router.post('/registrarse', async (req, res) => {
     let errors = [];
-    const { name, email, password, confirm_password } = req.body;
-    if(password != confirm_password) {
+    const { name, surname, email, password, cpassword } = req.body;
+
+    if(password != cpassword) {
+        console.log("Passwords do not match");
         errors.push({text: 'Passwords do not match.'});
     }
-    if(password.length < 4) {
-        errors.push({text: 'Passwords must be at least 4 characters.'})
-    }
-    if(errors.length > 0){
-    } else {
-        // Look for email coincidence
-        const emailUser = await User.findOne({email: email});
-        if(emailUser) {
-        } else {
-        // Saving a New User
-        const newUser = new User({name, email, password});
-        newUser.password = await newUser.encryptPassword(password);
-        await newUser.save();
-        }
+
+    if(password.length < 4){
+        console.log("Pasword length is too short");
+        errors.push({text: 'Pasword length is too short'});
     }
 
-    console.log(req.body);
+    const emailUser = await User.findOne({email: email});
+
+    if(emailUser) {
+        console.log("This email is on use");
+        errors.push({text: 'This email is on use'});
+    }
+
+    if(errors.length == 0){
+        const newUser = new User({name, surname, email, password});
+        newUser.password = await newUser.encryptPassword(password);
+        await newUser.save();
+        console.log(newUser);
+    }
+
 });
 
 router.get('/login', (req, res) => {
     res.render('login');
 });
+
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/registrarse',
+    failureFlash: true
+  }));
 
 module.exports = router;
