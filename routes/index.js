@@ -1,7 +1,7 @@
 const express = require('express');
 const passport = require('passport')
 const router = express.Router();
-const User = require('../models/User');
+const User = require('../models/user');
 
 router.get('/', (req, res) => {
     res.render('index');
@@ -40,7 +40,6 @@ router.post('/registrarse', async (req, res) => {
         const newUser = new User({name, surname, email, password});
         newUser.password = await newUser.encryptPassword(password);
         await newUser.save();
-        console.log(newUser);
     }
 
 });
@@ -51,8 +50,8 @@ router.get('/login', (req, res) => {
 
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/registrarse',
+    failureRedirect: '/login',
     failureFlash: true
-  }));
+}));
 
 module.exports = router;
