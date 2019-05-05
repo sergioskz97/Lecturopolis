@@ -2,14 +2,16 @@ const express = require('express');
 const passport = require('passport')
 const router = express.Router();
 const User = require('../models/user');
+const Event = require('../models/events');
 const { isAuthenticated } = require('../helpers/auth');
 
 router.get('/', (req, res) => {
     res.render('index');
 });
 
-router.get('/eventos', (req, res) => {
-    res.render('events');
+router.get('/eventos', async (req, res) => {
+    const events = await Event.find();
+    res.render('events', { events });
 });
 
 router.get('/registrarse', (req, res) => {
@@ -68,8 +70,38 @@ router.get('/logout', (req, res) => {
     res.redirect('/');
 });
 
-router.get('/admin', (req,res) => {
+router.get('/admin', (req, res) => {
     res.render('admin');
+});
+
+router.post('/admin', async (req, res) =>{
+    let errors = [];
+    const {event, type, date} = req.body;
+
+    if(!event){
+        console.log("Please insert event name")
+        errors.push({text: 'Please insert event name'})
+    }
+
+    if(!type){
+        console.log("Please insert event type")
+        errors.push({text: 'Please insert event type'})
+    }
+
+    if(!date){
+        console.log("Please insert event date")
+        errors.push({text: 'Please insert event date'})
+    }
+
+    if(errors.length == 0){
+        const newEvent = new Event({event, type, date});
+        await newEvent.save();
+        res.redirect('/');
+    }
+
+    else{
+        res.render('admin', {event, type, date});
+    }
 });
 
 module.exports = router;

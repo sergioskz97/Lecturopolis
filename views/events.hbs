@@ -15,21 +15,13 @@
                 </thead>
         
                 <tbody>
-                    <tr>
-                    <td>Barcelonismes</td>
-                    <td>Presentación</td>
-                    <td>01 abril 2019</td>
-                    </tr>
-                    <tr>
-                    <td>Viento azul</td>
-                    <td>Presentación</td>
-                    <td>01 abril 2019</td>
-                    </tr>
-                    <tr>
-                    <td>Todo saldra bien</td>
-                    <td>Firma de libros</td>
-                    <td>02 abril 2019</td>
-                    </tr>
+                    {{#each events}}
+                        <tr>
+                            <td>{{event}}</td>
+                            <td>{{type}}</td>
+                            <td>{{date}}</td>
+                        </tr>
+                    {{/each}}
                 </tbody>
             </table>
         </main>
