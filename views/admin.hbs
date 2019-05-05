@@ -3,5 +3,34 @@
 
     <body>
         {{> header}}
+
+        <div class="center-align form-div">
+            <form action="/admin" method="POST">
+                <div class="form-header">
+                    <h1>Administrador</h1>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Placeholder" name="event" type="text" class="validate">
+                        <label for="event">Nombre del evento</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input placeholder="Placeholder" name="type" type="text" class="validate">
+                        <label for="type">Tipo de evento</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input placeholder="Placeholder" name="date" type="text" class="validate">
+                        <label for="date">Fecha del evento</label>
+                    </div>
+                </div>
+                
+                <button class="form-btn">Actualizar</button>
+
+                <hr style="width: 80%;">
+            </form>
+        </div>
     </body>
 </html>
