@@ -1,0 +1,54 @@
+<header>
+    <nav>
+        <div class="nav-fixed">
+            <div class="nav-wrapper">
+                <ul>
+                    <li class="hide-on-med-and-down dropdown-trigger" data-target='dropdowncat'><a href="#">Categorías</a></li>
+                    <li class="hide-on-med-and-down"><a href="#">Contacto</a></li>
+                    <li><a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a></li>
+                    <li><a href="/" style="color:#ffdf01; font-family: ave; font-size: 30px;">Lecturópolis</a></li>
+                    <li><a href="/login" class="sidenav-trigger"><i class="material-icons">person</i></a></li>
+                    <li class="hide-on-med-and-down"><a href="/eventos">Eventos</a></li>
+                    {{#if user}}
+                        <li class="hide-on-med-and-down dropdown-trigger" data-target='dropdownuser'><a>{{user.username}}</a></li>
+                    {{else}}
+                        <li class="hide-on-med-and-down"><a href="/login">Login</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <ul id="dropdowncat" class='dropdown-content'>
+        <li><a href="">Todas</a></li>
+        <li><a href="">Terror</a></li>
+        <li><a href="">Romántico</a></li>
+        <li><a href="">Historico</a></li>
+        <li><a href="">Biografico</a></li>
+    </ul>
+
+    <ul id="dropdownuser" class='dropdown-content'>
+        <li><a href="">Perfil</a></li>
+        {{#ifCond user.username "==" "Admin"}}
+            <li><a href="/user/admin">Admin</a></li>
+        {{/ifCond}}
+        <li><a href="">Carrito</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="#">Categorías</a></li>
+        <li><a href="#">Foro</a></li>
+        <li><a href="/eventos">Eventos</a></li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems    );
+    });
+
+    $('.dropdown-trigger').dropdown();
+</script>

@@ -3,17 +3,47 @@ const express = require('express');
 const passport = require('passport');
 const flash = require('connect-flash');
 var bodyParser = require('body-parser');
+const Handlebars = require('handlebars');
 const routes = require('./routes/index');
 const session = require('express-session');
+const exphbs = require('express-handlebars');
+
 
 const app = express();
-const cons = require('consolidate');
 require('./public/js/database');
 require('./config/passport');
 
-app.engine('html', cons.swig)
+Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
+    switch (operator) {
+        case '==':
+            return (v1 == v2) ? options.fn(this) : options.inverse(this);
+        case '===':
+            return (v1 === v2) ? options.fn(this) : options.inverse(this);
+        case '!==':
+            return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+        case '<':
+            return (v1 < v2) ? options.fn(this) : options.inverse(this);
+        case '<=':
+            return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+        case '>':
+            return (v1 > v2) ? options.fn(this) : options.inverse(this);
+        case '>=':
+            return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+        case '&&':
+            return (v1 && v2) ? options.fn(this) : options.inverse(this);
+        case '||':
+            return (v1 || v2) ? options.fn(this) : options.inverse(this);
+        default:
+            return options.inverse(this);
+    }
+});
+
+app.engine('.hbs', exphbs({
+    partialsDir: path.join(app.get('views'), 'partials'),
+    extname: '.hbs'
+  }));
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'html');
+app.set('view engine', '.hbs');
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
@@ -27,9 +57,6 @@ app.use(passport.session());
 app.use(flash());
 
 app.use((req, res, next) => {
-    res.locals.success_msg = req.flash('success_msg');
-    res.locals.error_msg = req.flash('error_msg');
-    res.locals.error = req.flash('error');
     res.locals.user = req.user || null;
     next();
 });

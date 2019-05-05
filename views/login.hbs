@@ -1,0 +1,38 @@
+<html lang="es">
+    {{> head}}
+
+    <body>
+        {{> header}}        
+        <div class="center-align form-div">
+            <form action="/login" method="POST">
+
+                <div class="form-header">
+                    <h1>Login</h1>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Placeholder" name="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <input placeholder="Placeholder" name="password" type="password" class="validate">
+                        <label for="password">Contraseña</label>
+                    </div>
+                </div>
+
+                <button class="form-btn">Iniciar sesión</button>
+
+                <br>
+                <br>
+
+                <a href="/registrarse" class="col s6">Registrate</a>
+
+                <hr style="width: 80%;">
+
+            </form>
+        </div>
+    </body>
+
+</html>

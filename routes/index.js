@@ -2,6 +2,7 @@ const express = require('express');
 const passport = require('passport')
 const router = express.Router();
 const User = require('../models/user');
+const { isAuthenticated } = require('../helpers/auth');
 
 router.get('/', (req, res) => {
     res.render('index');
@@ -17,7 +18,7 @@ router.get('/registrarse', (req, res) => {
 
 router.post('/registrarse', async (req, res) => {
     let errors = [];
-    const { name, surname, email, password, cpassword } = req.body;
+    const { username, name, surname, email, password, cpassword } = req.body;
 
     if(password != cpassword) {
         console.log("Passwords do not match");
@@ -36,10 +37,18 @@ router.post('/registrarse', async (req, res) => {
         errors.push({text: 'This email is on use'});
     }
 
+    const userName = await User.findOne({username: username});
+
+    if(userName){
+        console.log("This username is on use");
+        errors.push({text: 'This username is on use'});
+    }
+
     if(errors.length == 0){
-        const newUser = new User({name, surname, email, password});
+        const newUser = new User({username, name, surname, email, password});
         newUser.password = await newUser.encryptPassword(password);
         await newUser.save();
+        res.redirect('/login');
     }
 
 });
@@ -53,5 +62,14 @@ router.post('/login', passport.authenticate('local', {
     failureRedirect: '/login',
     failureFlash: true
 }));
+
+router.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+});
+
+router.get('/admin', (req,res) => {
+    res.render('admin');
+});
 
 module.exports = router;
