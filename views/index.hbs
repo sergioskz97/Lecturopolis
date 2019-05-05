@@ -1,44 +1,10 @@
 <html lang="es">
-
-    <head>
-        <title>Lecturópolis</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/materialize.css">
-        <link href="img/logo.png" rel="icon" type="image/x-icon" />
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    </head>
+    {{> head}}
 
     <body>
 
         <!-- Header section -->
-        <header>          
-            <nav>
-                <div class="nav-fixed">
-                    
-                    <div class="nav-wrapper">
-                        <ul>
-                            <li class="hide-on-med-and-down"><a href="#">Categorías</a></li>
-                            <li class="hide-on-med-and-down"><a href="#">Contacto</a></li>
-                            <li><a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a></li>
-                            <li><a href="#" style="color:#c3073f; font-family: ave; font-size: 30px;">Lecturópolis</a></li>
-                            <li><a href="login.html" class="sidenav-trigger"><i class="material-icons">person</i></a></li>
-                            <li class="hide-on-med-and-down"><a href="events.html">Eventos</a></li>
-                            <li class="hide-on-med-and-down"><a href="login.html">Login</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            
-            <ul class="sidenav" id="mobile-nav">
-                <li><a href="#">Categorías</a></li>
-                <li><a href="#">Foro</a></li>
-                <li><a href="events.html">Eventos</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        
-        </header>
+        {{> header}}
 
         <!-- Content section -->
         <main>
@@ -85,6 +51,7 @@
                 <hr>
                 <p>Los productos más vendidos del último mes a un solo click de distancia.</p>
 
+                <!-- Products section -->
                 <section class="product-boxes">
                     <div class="box-product">
                         <div class="product-item">
@@ -135,15 +102,6 @@
         <footer>
 
         </footer>
-
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/materialize.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var elems = document.querySelectorAll('.sidenav');
-                var instances = M.Sidenav.init(elems    );
-            });
-        </script>
     </body>
 
 </html>

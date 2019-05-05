@@ -166,8 +166,8 @@ p{
     width: 80%;
     height: 2px;
     border: none;
-    background-color: #c3073f;
-    color: #c3073f;
+    background-color: #ffdf01;
+    color: #ffdf01;
 }
 
 .right-up-main h1{
@@ -384,8 +384,8 @@ p{
     width: 80%;
     height: 4px;
     border: none;
-    background-color: #c3073f;
-    color: #c3073f;
+    background-color: #ffdf01;
+    color: #ffdf01;
 }
 .gridwr p{
     font-size: 25px;
@@ -393,26 +393,42 @@ p{
 
 /* Login css variables */
 
-.login-div{
+.form-div{
     width: 90%;
     flex: 1 0 auto;
     margin: 5% auto;  
     max-width: 400px;
     text-align: center;
     border-radius: 15px;
-    background: #ffffff;
+    background: #f0f0f0;
     box-shadow: var(--shadow);
 }
 
-.login-div a{
-    color: #343434;
+.form-div a{
+    color: #ffdf01;
 }
 
-.login-btn{
+.form-btn{
     background: #343434;
     color: var(--light);
     padding: 0.6rem 1.3rem;
     text-decoration: none;
     border: 0;
     width: 100%;
+}
+
+.form-header{
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://i.imgur.com/wkjbzYZ.png");
+    box-shadow: var(--shadow);
+    border-top-left-radius: 15px;
+}
+
+.form-input{
+    color: #ffff;
+}
+
+.form-label{
+    color: #ffff;
 }

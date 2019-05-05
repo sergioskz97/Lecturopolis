@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // DB connection 
 
 mongoose.set('useFindAndModify', false);
-mongoose.connect('mongodb+srv://admin:usabilidadsyj@cluster0-gwrdx.mongodb.net/test?retryWrites=true', {
+mongoose.connect('mongodb+srv://admin:usabilidadsyj@cluster0-gwrdx.mongodb.net/lecturopolis?retryWrites=true', {
   useCreateIndex: true,
   useNewUrlParser: true
 })
