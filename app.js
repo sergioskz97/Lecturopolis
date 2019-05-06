@@ -41,7 +41,7 @@ Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
 app.engine('.hbs', exphbs({
     partialsDir: path.join(app.get('views'), 'partials'),
     extname: '.hbs'
-  }));
+}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', '.hbs');
 app.use(bodyParser.urlencoded({ extended: false }))
