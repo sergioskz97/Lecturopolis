@@ -104,4 +104,10 @@ router.post('/admin', async (req, res) =>{
     }
 });
 
+router.post('/eventos/borrar/:id', isAuthenticated, async (req, res) => {
+    await Event.findByIdAndDelete(req.params.id);
+    req.flash('success_msg', 'Note Deleted Successfully');
+    res.redirect('/eventos');
+  });
+
 module.exports = router;

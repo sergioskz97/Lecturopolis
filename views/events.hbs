@@ -11,17 +11,36 @@
                         <th>Evento</th>
                         <th>Tipo</th>
                         <th>Fecha</th>
+                        {{#ifCond user.username "==" "Admin"}}
+                            <th>Borrar</th>
+                        {{/ifCond}}
                     </tr>
                 </thead>
         
                 <tbody>
-                    {{#each events}}
-                        <tr>
-                            <td>{{event}}</td>
-                            <td>{{type}}</td>
-                            <td>{{date}}</td>
-                        </tr>
-                    {{/each}}
+                    {{#ifCond user.username "==" "Admin"}}
+                        {{#each events}}
+                            <tr>
+                                <td>{{event}}</td>
+                                <td>{{type}}</td>
+                                <td>{{date}}</td>
+                                <td>
+                                    <form action="/eventos/borrar/{{_id}}" method="POST">
+                                        <button type="submit">Borrar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    {{else}}
+                        {{#each events}}
+                            <tr>
+                                <td>{{event}}</td>
+                                <td>{{type}}</td>
+                                <td>{{date}}</td>
+                            </tr>
+                        {{/each}}
+                    {{/ifCond}}
+                    
                 </tbody>
             </table>
         </main>
