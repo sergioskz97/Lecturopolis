@@ -53,6 +53,10 @@ router.post('/registrarse', async (req, res) => {
         res.redirect('/login');
     }
 
+    else{
+        res.render('signup', {errors});
+    }
+
 });
 
 router.get('/login', (req, res) => {
@@ -62,7 +66,6 @@ router.get('/login', (req, res) => {
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login',
-    failureFlash: true
 }));
 
 router.get('/logout', (req, res) => {
@@ -100,14 +103,13 @@ router.post('/admin', async (req, res) =>{
     }
 
     else{
-        res.render('admin', {event, type, date});
+        res.render('admin', {errors, event, type, date});
     }
 });
 
 router.post('/eventos/borrar/:id', isAuthenticated, async (req, res) => {
     await Event.findByIdAndDelete(req.params.id);
-    req.flash('success_msg', 'Note Deleted Successfully');
-    res.redirect('/eventos');
+-    res.redirect('/eventos');
   });
 
 module.exports = router;

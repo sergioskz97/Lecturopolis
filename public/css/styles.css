@@ -425,6 +425,9 @@ p{
     border-top-left-radius: 15px;
 }
 
+.form-header h1{
+}
+
 .form-input{
     color: #ffff;
 }
