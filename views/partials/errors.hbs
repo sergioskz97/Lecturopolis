@@ -1,0 +1,21 @@
+{{#if error}}
+    <div class="card-panel alert alert-danger red lighten-4 red-text text-darken-4">
+        <b>ERROR!</b> {{error}}.
+    </div>
+{{/if}}
+
+{{#each errors}}
+    <div class="card-panel alert alert-danger red lighten-4 red-text text-darken-4">
+        <b>ERROR!</b> {{text}}.
+    </div>
+{{/each}}
+
+<script>
+    $('.alert').append('<button class="waves-effect btn-flat close"><i class="material-icons">close</i></button>');
+
+    $('body').on('click', '.alert .close', function() {
+        $(this).parent().fadeOut(300, function() {
+            $(this).remove();
+        });
+    });
+</script>

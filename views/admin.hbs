@@ -4,25 +4,29 @@
     <body>
         {{> header}}
 
+        <main>
+            {{> errors}}
+        </main>
+
         <div class="center-align form-div">
             <form action="/admin" method="POST">
                 <div class="form-header">
-                    <h1>Administrador</h1>
+                    <h1>Admin</h1>
                 </div>
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="Placeholder" name="event" type="text" class="validate">
+                        <input placeholder="Placeholder" name="event" type="text" class="validate" required>
                         <label for="event">Nombre del evento</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input placeholder="Placeholder" name="type" type="text" class="validate">
+                        <input placeholder="Placeholder" name="type" type="text" class="validate" required>
                         <label for="type">Tipo de evento</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input placeholder="Placeholder" name="date" type="text" class="validate">
+                        <input placeholder="Placeholder" name="date" type="text" class="validate" required>
                         <label for="date">Fecha del evento</label>
                     </div>
                 </div>
