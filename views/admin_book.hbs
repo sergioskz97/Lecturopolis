@@ -1,0 +1,57 @@
+<html>
+    {{> head}}
+
+    <body>
+        {{> header}}
+
+        <main>
+            {{> errors}}
+        </main>
+
+            <div class="center-align form-div">
+                <form action="/admin_libro" method="POST" enctype="multipart/form-data">
+                    <div class="form-header">
+                        <h1>Admin</h1>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="input-field col s12">
+                            <input placeholder="Placeholder" name="tittle" type="text" class="validate" required>
+                            <label for="tittle">Nombre del libro</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <input placeholder="Placeholder" name="category" type="text" class="validate" required>
+                            <label for="category">Categoría</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <input placeholder="Placeholder" name="author" type="text" class="validate" required>
+                            <label for="author">Autor</label>
+                        </div>
+                    
+                        <div class="input-field col s12">
+                            <input placeholder="Placeholder" name="price" type="number" class="validate" required>
+                            <label for="price">Precio</label>
+                        </div>
+
+                        <div class="file-field input-field col s12">
+                            <div class="btn">
+                                <span>Foto</span>
+                                <input type="file" name="image">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <button class="form-btn">Actualizar</button>
+
+                    <hr style="width: 80%;">
+                </form>
+            </div>
+    </body>
+</html>

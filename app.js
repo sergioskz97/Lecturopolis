@@ -1,4 +1,5 @@
 const path = require('path');
+var multer  =   require('multer');
 const express = require('express');
 const passport = require('passport');
 const flash = require('connect-flash');
@@ -40,12 +41,22 @@ Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
 
 app.engine('.hbs', exphbs({
     partialsDir: path.join(app.get('views'), 'partials'),
+    uploadDir: __dirname + '/uploads',
     extname: '.hbs'
 }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', '.hbs');
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+const storage= multer.diskStorage({
+    destination: path.join(__dirname, 'public/uploads'),
+    filename: (req, file, cb) => {
+        cb(null, new Date().getTime() + path.extname(file.originalname));
+    }
+});
+
+app.use(multer({storage}).single('image'))
 
 app.use(session({
     secret: 'secret',

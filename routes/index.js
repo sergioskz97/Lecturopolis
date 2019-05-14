@@ -2,8 +2,18 @@ const express = require('express');
 const passport = require('passport')
 const router = express.Router();
 const User = require('../models/user');
+const Book = require('../models/product');
 const Event = require('../models/events');
 const { isAuthenticated } = require('../helpers/auth');
+
+const cloudinary = require('cloudinary');
+
+cloudinary.config({
+    cloud_name: 'degtjs2lg',
+    api_key: '451512832657149',
+    api_secret: 'gWG7gFbXGdjc9RbmoQZrTq9Yv38',
+
+});
 
 router.get('/', (req, res) => {
     res.render('index');
@@ -73,11 +83,11 @@ router.get('/logout', (req, res) => {
     res.redirect('/');
 });
 
-router.get('/admin', (req, res) => {
-    res.render('admin');
+router.get('/admin_eventos', (req, res) => {
+    res.render('admin_event');
 });
 
-router.post('/admin', async (req, res) =>{
+router.post('/admin_eventos', async (req, res) =>{
     let errors = [];
     const {event, type, date} = req.body;
 
@@ -103,13 +113,31 @@ router.post('/admin', async (req, res) =>{
     }
 
     else{
-        res.render('admin', {errors, event, type, date});
+        res.render('admin_event', {errors, event, type, date});
     }
 });
 
 router.post('/eventos/borrar/:id', isAuthenticated, async (req, res) => {
     await Event.findByIdAndDelete(req.params.id);
--    res.redirect('/eventos');
-  });
+    res.redirect('/eventos');
+});
+
+router.get('/admin_libro', (req, res) =>{
+    res.render('admin_book');
+});
+
+router.post('/admin_libro', isAuthenticated, async (req, res) =>{
+    let errors = [];
+    const {tittle, category, author, price} = req.body;
+    const result = await cloudinary.v2.uploader.upload(req.file.path);
+
+    if(errors.length == 0){
+        const newBook = new Book({tittle, category, author, image: result.url, price});
+        console.log(newBook);
+        await newBook.save();
+        res.redirect('/admin_libro');
+    }
+    //res.redirect('/');
+});
 
 module.exports = router;
