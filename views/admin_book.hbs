@@ -8,7 +8,7 @@
             {{> errors}}
         </main>
 
-            <div class="center-align form-div">
+            <div class="form-div">
                 <form action="/admin_libro" method="POST" enctype="multipart/form-data">
                     <div class="form-header">
                         <h1>Admin</h1>
@@ -32,7 +32,7 @@
                         </div>
                     
                         <div class="input-field col s12">
-                            <input placeholder="Placeholder" name="price" type="number" class="validate" required>
+                            <input placeholder="Placeholder" name="price" type="number" class="validate" step="0.01" required>
                             <label for="price">Precio</label>
                         </div>
 
@@ -53,5 +53,27 @@
                     <hr style="width: 80%;">
                 </form>
             </div>
+
+            <main>
+                <table class="centered">
+                    <thead>
+                        <th>Libro</th>
+                        <th>Precio</th>
+                        <th>Borrar</th>
+                        <th>Editar</th>
+                    </thead>
+
+                    <tbody>
+                        {{#each books}}
+                        <tr>
+                            <td>{{tittle}}</td>
+                            <td>{{price}}</td>
+                            <td>Borrar</td>
+                            <td>Editar</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </main>
     </body>
 </html>

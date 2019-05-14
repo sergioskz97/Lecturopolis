@@ -15,8 +15,9 @@ cloudinary.config({
 
 });
 
-router.get('/', (req, res) => {
-    res.render('index');
+router.get('/', async (req, res) => {
+    const books = await Book.find();
+    res.render('index', {books});
 });
 
 router.get('/eventos', async (req, res) => {
@@ -122,8 +123,9 @@ router.post('/eventos/borrar/:id', isAuthenticated, async (req, res) => {
     res.redirect('/eventos');
 });
 
-router.get('/admin_libro', (req, res) =>{
-    res.render('admin_book');
+router.get('/admin_libro', async (req, res) =>{
+    const books = await Book.find();
+    res.render('admin_book', {books});
 });
 
 router.post('/admin_libro', isAuthenticated, async (req, res) =>{
