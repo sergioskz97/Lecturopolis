@@ -16,7 +16,7 @@ cloudinary.config({
 });
 
 router.get('/', async (req, res) => {
-    const books = await Book.find();
+    const books = await Book.find().sort({'_id':-1}).limit(3);
     res.render('index', {books});
 });
 
@@ -140,6 +140,36 @@ router.post('/admin_libro', isAuthenticated, async (req, res) =>{
         res.redirect('/admin_libro');
     }
     //res.redirect('/');
+});
+
+router.get('/Erotico', async (req, res) =>{
+    const books = await Book.find({ "category": "Erotic"});
+    res.render('products', {books});
+});
+
+router.get('/Terror', async (req, res) =>{
+    const books = await Book.find({ "category": "Terror"});
+    res.render('products', {books});
+});
+
+router.get('/Aventura', async (req, res) =>{
+    const books = await Book.find({ "category": "Adventure"});
+    res.render('products', {books});
+});
+
+router.get('/Romantico', async (req, res) =>{
+    const books = await Book.find({ "category": "Romantic"});
+    res.render('products', {books});
+});
+
+router.get('/Historico', async (req, res) =>{
+    const books = await Book.find({ "category": "Historic"});
+    res.render('products', {books});
+});
+
+router.get('/Biografico', async (req, res) =>{
+    const books = await Book.find({ "category": "Biografic"});
+    res.render('products', {books});
 });
 
 module.exports = router;
