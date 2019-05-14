@@ -22,7 +22,16 @@
                         </div>
 
                         <div class="input-field col s12">
-                            <input placeholder="Placeholder" name="category" type="text" class="validate" required>
+                            <select name="category">
+                                <option value="" disabled selected>Elige una categoría</option>
+                                <option value="Terror">Terror</option>
+                                <option value="Adventure">Aventura</option>
+                                <option value="Erotic">Erótico</option>
+                                <option value="Romantic">Romántico</option>
+                                <option value="Historic">Historico</option>
+                                <option value="Biografic">Biografico</option>
+                            </select>
+
                             <label for="category">Categoría</label>
                         </div>
 
@@ -75,5 +84,11 @@
                     </tbody>
                 </table>
             </main>
+
+            <script>
+                $(document).ready(function(){
+                    $('select').formSelect();
+                });
+            </script>
     </body>
 </html>

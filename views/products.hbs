@@ -1,0 +1,33 @@
+<html lang="es">
+    {{> head}}
+
+    <body>
+
+        <!-- Header section -->
+        {{> header}}
+
+        <!-- Errors section -->
+        {{> errors}}
+
+        <!-- Content section -->
+
+        <main>
+                <!-- Products section -->
+                <section class="product-boxes">
+                    {{#each books}}
+                    <div class="box-product">
+                        <div class="product-item">
+                            <figure>
+                                <img src="{{image}}" alt="product-image">
+                                <figcaption>{{tittle}}</figcaption>
+                                <figcaption>{{price}}€</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    {{/each}}
+                </section>
+        </main>
+            
+    </body>
+
+</html>
