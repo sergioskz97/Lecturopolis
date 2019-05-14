@@ -10,6 +10,11 @@
         {{> errors}}
 
         <!-- Content section -->
+
+        <div class="main-head hide-on-med-and-down">
+            
+        </div>
+
         <main>
 
             <!-- Principal grid -->
@@ -51,51 +56,23 @@
                 </section>
 
                 <br>
-                <h1>Productos destacados</h1>
+                <h1>Productos más recientes</h1>
                 <hr>
-                <p>Los productos más vendidos del último mes a un solo click de distancia.</p>
+                <p>Los productos más novedosos del último mes a un solo click de distancia.</p>
 
                 <!-- Products section -->
                 <section class="product-boxes">
+                    {{#each books}}
                     <div class="box-product">
                         <div class="product-item">
                             <figure>
-                                <img src="img/example.jpg" alt="product-image">
-                                <figcaption>Fariña</figcaption>
-                                <figcaption>15€</figcaption>
+                                <img src="{{image}}" alt="product-image">
+                                <figcaption>{{tittle}}</figcaption>
+                                <figcaption>{{price}}€</figcaption>
                             </figure>
                         </div>
                     </div>
-
-                    <div class="box-product">
-                        <div class="product-item">
-                            <figure>
-                                <img src="img/example.jpg" alt="product-image">
-                                <figcaption>Fariña</figcaption>
-                                <figcaption>15€</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <div class="box-product">
-                        <div class="product-item">
-                            <figure>
-                                <img src="img/example.jpg" alt="product-image">
-                                <figcaption>Fariña</figcaption>
-                                <figcaption>15€</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <div class="box-product">
-                        <div class="product-item">
-                            <figure>
-                                <img src="img/example.jpg" alt="product-image">
-                                <figcaption>Fariña</figcaption>
-                                <figcaption>15€</figcaption>
-                            </figure>
-                        </div>
-                    </div>
+                    {{/each}}
                 </section>
             </div>
             <!-- End of principal grid -->
