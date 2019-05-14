@@ -4,11 +4,11 @@
             <div class="nav-wrapper">
                 <ul>
                     <li class="hide-on-med-and-down dropdown-trigger" data-target='dropdowncat'><a href="#">Categorías</a></li>
-                    <li class="hide-on-med-and-down"><a href="#">Contacto</a></li>
+                    <li class="hide-on-med-and-down" ><a href="#">Contacto</a></li>
                     <li><a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a></li>
-                    <li><a href="/" style="color:#ffdf01; font-family: ave; font-size: 30px;">Lecturópolis</a></li>
+                    <li><a href="/" style="color:#ffdf01; font-family: ave; font-size: 30px;" >Lecturópolis</a></li>
                     <li><a href="/login" class="sidenav-trigger"><i class="material-icons">person</i></a></li>
-                    <li class="hide-on-med-and-down"><a href="/eventos">Eventos</a></li>
+                    <li class="hide-on-med-and-down" ><a href="/eventos">Eventos</a></li>
                     {{#if user}}
                         <li class="hide-on-med-and-down dropdown-trigger" data-target='dropdownuser'><a>{{user.username}}</a></li>
                     {{else}}
@@ -19,15 +19,15 @@
         </div>
     </nav>
 
-    <ul id="dropdowncat" class='dropdown-content'>
+    <ul id="dropdowncat" class='dropdown-content' tabindex="0" role="list">
         <li><a href="">Todas</a></li>
         <li><a href="">Terror</a></li>
         <li><a href="">Romántico</a></li>
-        <li><a href="">Historico</a></li>
-        <li><a href="">Biografico</a></li>
+        <li><a href="">Historia</a></li>
+        <li><a href="">Biográfico</a></li>
     </ul>
 
-    <ul id="dropdownuser" class='dropdown-content'>
+    <ul id="dropdownuser" class='dropdown-content' tabindex="0" role="list">
         <li><a href="">Perfil</a></li>
         {{#ifCond user.username "==" "Admin"}}
             <li><a href="/admin">Admin</a></li>
@@ -36,7 +36,7 @@
         <li><a href="/logout">Logout</a></li>
     </ul>
 
-    <ul class="sidenav" id="mobile-nav">
+    <ul class="sidenav" id="mobile-nav" role="navigation">
         <li><a href="#">Categorías</a></li>
         <li><a href="#">Foro</a></li>
         <li><a href="/eventos">Eventos</a></li>
