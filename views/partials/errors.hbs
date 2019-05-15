@@ -1,11 +1,11 @@
 {{#if error}}
-    <div class="card-panel alert alert-danger red lighten-4 red-text text-darken-4">
+    <div class="card-panel alert alert-danger red lighten-4 red-text text-darken-4" role="alert" aria-live="assertive">
         <b>ERROR!</b> {{error}}.
     </div>
 {{/if}}
 
 {{#each errors}}
-    <div class="card-panel alert alert-danger red lighten-4 red-text text-darken-4">
+    <div class="card-panel alert alert-danger red lighten-4 red-text text-darken-4" role="alert" aria-live="assertive">
         <b>ERROR!</b> {{text}}.
     </div>
 {{/each}}

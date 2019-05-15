@@ -5,14 +5,14 @@
         {{> header}}
 
         <main>
-            <table class="centered responsive-table">
+            <table class="centered" role="table">
                 <thead>
-                    <tr>
-                        <th>Evento</th>
-                        <th>Tipo</th>
-                        <th>Fecha</th>
+                    <tr role="row">
+                        <th role="columnheader">Evento</th>
+                        <th role="columnheader">Tipo</th>
+                        <th role="columnheader">Fecha</th>
                         {{#ifCond user.username "==" "Admin"}}
-                            <th>Borrar</th>
+                            <th role="columnheader">Borrar</th>
                         {{/ifCond}}
                     </tr>
                 </thead>
@@ -20,11 +20,11 @@
                 <tbody>
                     {{#ifCond user.username "==" "Admin"}}
                         {{#each events}}
-                            <tr>
-                                <td>{{event}}</td>
-                                <td>{{type}}</td>
-                                <td>{{date}}</td>
-                                <td>
+                            <tr role="row">
+                                <td role="cell">{{event}}</td>
+                                <td role="cell">{{type}}</td>
+                                <td role="cell">{{date}}</td>
+                                <td role="cell">
                                     <form action="/eventos/borrar/{{_id}}" method="POST">
                                         <button type="submit">Borrar</button>
                                     </form>
@@ -33,10 +33,10 @@
                         {{/each}}
                     {{else}}
                         {{#each events}}
-                            <tr>
-                                <td>{{event}}</td>
-                                <td>{{type}}</td>
-                                <td>{{date}}</td>
+                            <tr role="row">
+                                <td role="cell">{{event}}</td>
+                                <td role="cell">{{type}}</td>
+                                <td role="cell">{{date}}</td>
                             </tr>
                         {{/each}}
                     {{/ifCond}}

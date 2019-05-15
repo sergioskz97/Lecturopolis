@@ -10,7 +10,7 @@
         </main>
 
         <div class="center-align form-div">
-            <form action="/registrarse" method="POST">
+            <form action="/registrarse" method="POST" aria-label="Formulario de registro">
 
                 <div class="form-header">
                     <h1>Signup</h1>
@@ -18,37 +18,37 @@
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="Placeholder" name="username" type="text" class="validate" required>
+                        <input placeholder="Nombre de usuario" name="username" type="text" class="validate" aria-required="true" required>
                         <label for="username">Nombre de usuario</label>
                     </div>
 
                     <div class="input-field col s6">
-                        <input placeholder="Placeholder" name="name" type="text" class="validate" required>
+                        <input placeholder="Nombre" name="name" type="text" class="validate" aria-required="true" required>
                         <label for="name">Nombre</label>
                     </div>
 
                     <div class="input-field col s6">
-                        <input placeholder="Placeholder" name="surname" type="text" class="validate" required>
+                        <input placeholder="Apellidos" name="surname" type="text" class="validate" aria-required="true" required>
                         <label for="surname">Apellidos</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input placeholder="Placeholder" name="email" type="email" class="validate" required>
+                        <input placeholder="Email" name="email" type="email" class="validate" aria-required="true" required>
                         <label for="email">Email</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input placeholder="Placeholder" name="password" type="password" class="validate" required>
+                        <input placeholder="Contraseña" name="password" type="password" class="validate" aria-required="true" required>
                         <label for="password">Contraseña</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input placeholder="Placeholder" name="cpassword" type="password" class="validate" required>
+                        <input placeholder="Confirmar contraseña" name="cpassword" type="password" class="validate" aria-required="true" required>
                         <label for="cpassword">Confirmar contraseña</label>
                     </div>
                 </div>
 
-                <button class="form-btn">Registrarse</button>
+                <button class="form-btn" aria-label="Registrarse">Registrarse</button>
 
                 <br>
                 <br>
