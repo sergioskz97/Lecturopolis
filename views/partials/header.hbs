@@ -3,16 +3,16 @@
         <div class="nav-fixed">
             <div class="nav-wrapper">
                 <ul>
-                    <li class="hide-on-med-and-down dropdown-trigger" data-target='dropdowncat'><a href="#">Categorías</a></li>
-                    <li class="hide-on-med-and-down"><a href="#">Contacto</a></li>
-                    <li><a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a></li>
+                    <li class="hide-on-med-and-down dropdown-trigger" data-target='dropdowncat' role="menu" aria-label="Categorías"><a href="#">Categorías</a></li>
+                    <li class="hide-on-med-and-down" aria-label="Contacto"><a href="#">Contacto</a></li>
+                    <li><a href="#" data-target="mobile-nav" class="sidenav-trigger" role="menu" aria-label="menu"><i class="material-icons">menu</i></a></li>
                     <li><a href="/" style="color:#ffdf01; font-family: ave; font-size: 30px;">Lecturópolis</a></li>
-                    <li><a href="/login" class="sidenav-trigger"><i class="material-icons">person</i></a></li>
-                    <li class="hide-on-med-and-down"><a href="/eventos">Eventos</a></li>
+                    <li><a href="/login" class="sidenav-trigger" aria-label="Inicio de sesión"><i class="material-icons">person</i></a></li>
+                    <li class="hide-on-med-and-down" aria-label="Eventos"><a href="/eventos">Eventos</a></li>
                     {{#if user}}
                         <li class="hide-on-med-and-down dropdown-trigger" data-target='dropdownuser'><a>{{user.username}}</a></li>
                     {{else}}
-                        <li class="hide-on-med-and-down"><a href="/login">Login</a></li>
+                        <li class="hide-on-med-and-down" aria-label="Inicio de sesión"><a href="/login">Login</a></li>
                     {{/if}}
                 </ul>
             </div>
@@ -20,12 +20,12 @@
     </nav>
 
     <ul id="dropdowncat" class='dropdown-content'>
-        <li><a href="/Terror">Terror</a></li>
-        <li><a href="/Aventura">Aventura</a></li>
-        <li><a href="/Erotico">Erótico</a></li>
-        <li><a href="/Romantico">Romántico</a></li>
-        <li><a href="/Historico">Historico</a></li>
-        <li><a href="/Biografico">Biografico</a></li>
+        <li><a href="/Terror" role="menuitem" aria-label="Terror">Terror</a></li>
+        <li><a href="/Aventura" role="menuitem" aria-label="Aventura">Aventura</a></li>
+        <li><a href="/Erotico" role="menuitem" aria-label="Erótico">Erótico</a></li>
+        <li><a href="/Romantico" role="menuitem" aria-label="Romántico">Romántico</a></li>
+        <li><a href="/Historico" role="menuitem" aria-label="Historico">Historico</a></li>
+        <li><a href="/Biografico" role="menuitem" aria-label="Biografico">Biografico</a></li>
     </ul>
 
     <ul id="dropdownuser" class='dropdown-content'>
@@ -39,13 +39,13 @@
     </ul>
 
     <ul class="sidenav" id="mobile-nav">
-        <li><a href="/Terror">Terror</a></li>
-        <li><a href="/Aventura">Aventura</a></li>
-        <li><a href="/Erotico">Erótico</a></li>
-        <li><a href="/Romantico">Romántico</a></li>
-        <li><a href="/Historico">Historico</a></li>
-        <li><a href="/Biografico">Biografico</a></li>
-        <li><a href="/eventos">Eventos</a></li>
+        <li><a href="/Terror" role="menuitem" aria-label="Terror">Terror</a></li>
+        <li><a href="/Aventura" role="menuitem" aria-label="Aventura">Aventura</a></li>
+        <li><a href="/Erotico" role="menuitem" aria-label="Erótico">Erótico</a></li>
+        <li><a href="/Romantico" role="menuitem" aria-label="Romántico">Romántico</a></li>
+        <li><a href="/Historico" role="menuitem" aria-label="Historico">Historico</a></li>
+        <li><a href="/Biografico" role="menuitem" aria-label="Biografico">Biografico</a></li>
+        <li><a href="/eventos" role="menuitem" aria-label="Eventos">Eventos</a></li>
         <li><a href="#">Contacto</a></li>
     </ul>
 </header>
