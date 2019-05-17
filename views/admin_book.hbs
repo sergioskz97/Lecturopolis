@@ -79,7 +79,11 @@
                         <tr role="row">
                             <td role="cell">{{tittle}}</td>
                             <td role="cell">{{price}}</td>
-                            <td role="cell">Borrar</td>
+                            <td role="cell">
+                                <form action="/admin_libro/borrar/{{_id}}" method="POST">
+                                    <button type="submit">Borrar</button>
+                                </form>
+                            </td>
                             <td role="cell">Editar</td>
                         </tr>
                         {{/each}}

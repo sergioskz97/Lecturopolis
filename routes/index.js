@@ -134,12 +134,19 @@ router.post('/admin_libro', isAuthenticated, async (req, res) =>{
     const result = await cloudinary.v2.uploader.upload(req.file.path);
 
     if(errors.length == 0){
-        const newBook = new Book({tittle, category, author, image: result.url, price});
+        const newBook = new Book({tittle, category, author, image: result.url, public_id: result.public_id, price});
         console.log(newBook);
         await newBook.save();
         res.redirect('/admin_libro');
     }
     //res.redirect('/');
+});
+
+router.post('/admin_libro/borrar/:id', isAuthenticated, async (req, res) => {
+    const photo = await Book.findByIdAndDelete(req.params.id);
+    const result = await cloudinary.v2.uploader.destroy(photo.public_id);
+    console.log(result);
+    res.redirect('/admin_libro');
 });
 
 router.get('/Erotico', async (req, res) =>{

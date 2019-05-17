@@ -418,6 +418,7 @@ p{
 }
 
 .form-header{
+    color: #f0f0f0;
     background-size: cover;
     background-position: center;
     background-image: url("https://i.imgur.com/wkjbzYZ.png");
@@ -426,6 +427,10 @@ p{
 }
 
 .form-header h1{
+}
+
+.form-header img{
+    max-width: 100px
 }
 
 .form-input{
