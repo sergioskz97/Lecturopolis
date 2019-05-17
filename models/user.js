@@ -8,6 +8,8 @@ const UserSchema = new Schema({
     surname: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
+    image: {type: String},
+    public_id: {type: String},
     date: { type: Date, default: Date.now }
 });
 

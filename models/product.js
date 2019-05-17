@@ -6,6 +6,7 @@ const bookSchema = new Schema({
     author: {type: String , required: true},
     image: {type: String, required: true},
     price: { type: Number, required: true},
+    public_id: {type: String, required: true},
     created_at: {type: Date, default: Date.now()}
 });
 
