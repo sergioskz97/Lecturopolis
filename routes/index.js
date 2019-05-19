@@ -151,32 +151,38 @@ router.post('/admin_libro/borrar/:id', isAuthenticated, async (req, res) => {
 
 router.get('/Erotico', async (req, res) =>{
     const books = await Book.find({ "category": "Erotic"});
-    res.render('products', {books});
+    const Tittle = "Erótico";
+    res.render('products', {books, Tittle});
 });
 
 router.get('/Terror', async (req, res) =>{
     const books = await Book.find({ "category": "Terror"});
-    res.render('products', {books});
+    const Tittle = "Terror";
+    res.render('products', {books, Tittle});
 });
 
 router.get('/Aventura', async (req, res) =>{
     const books = await Book.find({ "category": "Adventure"});
-    res.render('products', {books});
+    const Tittle = "Aventura";
+    res.render('products', {books, Tittle});
 });
 
 router.get('/Romantico', async (req, res) =>{
     const books = await Book.find({ "category": "Romantic"});
-    res.render('products', {books});
+    const Tittle = "Romántico";
+    res.render('products', {books, Tittle});
 });
 
 router.get('/Historico', async (req, res) =>{
     const books = await Book.find({ "category": "Historic"});
-    res.render('products', {books});
+    const Tittle = "Histórico";
+    res.render('products', {books, Tittle});
 });
 
 router.get('/Biografico', async (req, res) =>{
     const books = await Book.find({ "category": "Biografic"});
-    res.render('products', {books});
+    const Tittle = "Biográfico";
+    res.render('products', {books, Tittle});
 });
 
 module.exports = router;
