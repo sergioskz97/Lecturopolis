@@ -15,7 +15,7 @@
             <h1>{{Tittle}}</h1>
         </div>
 
-        <main class="hide-on-med-and-down">
+        <!--<main class="hide-on-med-and-down">
             <div class="row">
                 {{#each books}}
                     <div class="prod-container col s12 m6 l3" style="margin-bottom: -15%;">
@@ -44,37 +44,34 @@
                     </div>
                 {{/each}}
             </div>         
-        </main>
+        </main>-->
 
-        <!-- Products section -->
-        <div class="row show-on-medium-and-down">
-            {{#each books}}
-                <div class="prod-container col s12 m6 l3" style="margin-bottom: -25%;">
-                    <div class="card-profile ">
-                        <div class="card-profile_visual" style="background: url({{image}}) no-repeat center center/cover;">
+        <main>
+            <div class="row">
+                {{#each books}}
+                    <div class="col s12 m6 l3">
+                        <div class="card-product">
+                            <img src="{{image}}" alt="">
                             
-                        </div>
+                            <div class="card-btn">
+                                <a href="#"></a>
+                            </div>
 
-                        <div class="card-profile_user-infos">
-                            <span class="infos_name">{{tittle}}</span>
-                            <span class="infos_nick">{{author}}</span>
-
-                            <a href="#"></a>
-                        </div>
-
-                        <div class="card-profile_user-stats">
-                            <div class="stats-holder">
-                                <div class="user-stats">
-                                    <strong>Precio</strong>
-                                    <span>{{price}}€</span>
+                            <div class="card-info">
+                                <div class="card-info-holder">
+                                    <div class="card-price">
+                                        <h1>{{tittle}}</h1>
+                                        <strong>Precio</strong>
+                                        <span>{{price}}€</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
-                </div>
-            {{/each}}
-        </div>    
+                {{/each}}
+            </div>
+        </main>
+
             
     </body>
 
