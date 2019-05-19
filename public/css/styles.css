@@ -521,7 +521,6 @@ p{
     display: block;
     position: absolute;
     width: 100%;
-    height: 100px;
     bottom: 0;
     box-shadow: 0 36px 64px -34px black, 0 16px 14px -14px rgba(0, 0, 0, 0.6), 0 22px 18px -18px rgba(0, 0, 0, 0.4), 0 22px 38px -18px black;
     -webkit-transform: scaleX(0.7) scaleY(1.3) translateY(-15%);
