@@ -11,21 +11,40 @@
 
         <!-- Content section -->
 
+        <div class="main-head hide-on-med-and-down">
+            <h1>{{Tittle}}</h1>
+        </div>
+
         <main>
                 <!-- Products section -->
-                <section class="product-boxes">
+                <div class="row">
                     {{#each books}}
-                    <div class="box-product">
-                        <div class="product-item">
-                            <figure>
-                                <img src="{{image}}" alt="portada del libro {{tittle}}">
-                                <figcaption>{{tittle}}</figcaption>
-                                <figcaption>{{price}}€</figcaption>
-                            </figure>
+                        <div class="prod-container col s12 m4 l3">
+                            <div class="card-profile">
+                                <div class="card-profile_visual">
+                                    <img src="{{image}}" alt="">
+                                </div>
+
+                                <div class="card-profile_user-infos">
+                                    <span class="infos_name">{{tittle}}</span>
+                                    <span class="infos_nick">{{author}}</span>
+
+                                    <a href="#"></a>
+                                </div>
+
+                                <div class="card-profile_user-stats">
+                                    <div class="stats-holder">
+                                        <div class="user-stats">
+                                            <strong>Precio</strong>
+                                            <span>{{price}}€</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
                         </div>
-                    </div>
                     {{/each}}
-                </section>
+                </div>                
         </main>
             
     </body>

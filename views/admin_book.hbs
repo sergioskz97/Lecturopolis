@@ -57,7 +57,7 @@
 
                     </div>
                     
-                    <button class="form-btn">Actualizar</button>
+                    <button class="form-btn">Publicar</button>
 
                     <hr style="width: 80%;">
                 </form>
@@ -81,10 +81,14 @@
                             <td role="cell">{{price}}</td>
                             <td role="cell">
                                 <form action="/admin_libro/borrar/{{_id}}" method="POST">
-                                    <button type="submit">Borrar</button>
+                                    <button class="delete_btn" type="submit">Borrar</button>
                                 </form>
                             </td>
-                            <td role="cell">Editar</td>
+                            <td role="cell">
+                                <form action="/admin_libro/editar/{{_id}}" method="POST">
+                                    <button class="edit_btn" type="submit">Editar</button>
+                                </form>
+                            </td>
                         </tr>
                         {{/each}}
                     </tbody>
