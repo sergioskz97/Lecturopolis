@@ -108,7 +108,7 @@ router.post('/admin_eventos', async (req, res) =>{
     }
 
     if(errors.length == 0){
-        const newEvent = new Event({event, type, date});
+        const newEvent = new Event({event, type, date, place});
         await newEvent.save();
         res.redirect('/');
     }
