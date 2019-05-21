@@ -11,6 +11,7 @@
                         <th role="columnheader">Evento</th>
                         <th role="columnheader">Tipo</th>
                         <th role="columnheader">Fecha</th>
+                        <th role="columnheader">Lugar</th>
                         {{#ifCond user.username "==" "Admin"}}
                             <th role="columnheader">Borrar</th>
                         {{/ifCond}}
@@ -24,6 +25,7 @@
                                 <td role="cell">{{event}}</td>
                                 <td role="cell">{{type}}</td>
                                 <td role="cell">{{date}}</td>
+                                <td role="cell">{{place}}</td>
                                 <td role="cell">
                                     <form action="/eventos/borrar/{{_id}}" method="POST">
                                         <button class="delete_btn" type="submit">
@@ -39,6 +41,7 @@
                                 <td role="cell">{{event}}</td>
                                 <td role="cell">{{type}}</td>
                                 <td role="cell">{{date}}</td>
+                                <td role="cell">{{place}}</td>
                             </tr>
                         {{/each}}
                     {{/ifCond}}

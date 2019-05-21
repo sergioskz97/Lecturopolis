@@ -9,7 +9,6 @@ const routes = require('./routes/index');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 
-
 const app = express();
 require('./public/js/database');
 require('./config/passport');
