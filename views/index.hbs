@@ -20,7 +20,7 @@
             <!-- Principal grid -->
             <div class="gridwr">
                 <section class="top-container">
-                    <header class="showcase">
+                    <header class="showcase" tabindex="0">
                         <h1>
                             Lecturópolis
                         </h1>
@@ -29,12 +29,12 @@
                         </p>
                         <a href="#" class="button">Más información</a>
                     </header>
-                    <div class="top-box top-box-a">
+                    <div class="top-box top-box-a" tabindex="0">
                         <h4>Suscripción</h4>
                         <p class="price">20€/año</p>
                         <a href="" class="button">Comenzar</a>
                     </div>
-                    <div class="top-box top-box-b">
+                    <div class="top-box top-box-b" tabindex="0">
                         <h4>Suscripción vip</h4>
                         <p class="price">$40€/año</p>
                         <a href="" class="button">Comenzar</a>
@@ -42,28 +42,28 @@
                 </section>
 
                 <section class="boxes">
-                    <div class="box">
-                        <i class="material-icons large">people</i>
+                    <div class="box" tabindex="0">
+                        <i class="material-icons large" aria-label="Icono personas">people</i>
                         <h3>Apoyanos</h3>
                         <p>Puedes realizar donaciones para ayudar en el desarrollo de esta aplicación.</p>
                     </div>
     
-                    <div class="box">
-                        <i class="material-icons large">accessibility</i>
+                    <div class="box" tabindex="0">
+                        <i class="material-icons large" aria-label="Icono accesibilidad">accessibility</i>
                         <h3>Accesibilidad</h3>
                         <p>Esta página tiene como objetivo llegar a todo tipo de públicos por lo cual la accesibilidad es muy importante para nosotros.</p>
                     </div>
                 </section>
 
                 <br>
-                <h1>Productos más recientes</h1>
+                <h1 tabindex="0">Productos más recientes</h1>
                 <hr>
-                <p>Los productos más novedosos del último mes a un solo click de distancia.</p>
+                <p tabindex="0">Los productos más novedosos del último mes a un solo click de distancia.</p>
 
                 <!-- Products section -->
                 <section class="product-boxes">
                     {{#each books}}
-                    <div class="box-product">
+                    <div class="box-product" tabindex="0">
                         <div class="product-item">
                             <figure>
                                 <img src="{{image}}" alt="portada del libro {{tittle}}">

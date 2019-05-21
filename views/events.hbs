@@ -5,9 +5,9 @@
         {{> header}}
 
         <main>
-            <table class="centered" role="table">
+            <table class="centered">
                 <thead>
-                    <tr role="row">
+                    <tr role="row" tabindex="0">
                         <th role="columnheader">Evento</th>
                         <th role="columnheader">Tipo</th>
                         <th role="columnheader">Fecha</th>
@@ -20,7 +20,7 @@
                 <tbody>
                     {{#ifCond user.username "==" "Admin"}}
                         {{#each events}}
-                            <tr role="row">
+                            <tr role="row" tabindex="0">
                                 <td role="cell">{{event}}</td>
                                 <td role="cell">{{type}}</td>
                                 <td role="cell">{{date}}</td>
@@ -35,7 +35,7 @@
                         {{/each}}
                     {{else}}
                         {{#each events}}
-                            <tr role="row">
+                            <tr role="row" tabindex="0">
                                 <td role="cell">{{event}}</td>
                                 <td role="cell">{{type}}</td>
                                 <td role="cell">{{date}}</td>
