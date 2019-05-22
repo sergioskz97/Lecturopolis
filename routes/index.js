@@ -1,6 +1,7 @@
 const express = require('express');
 const passport = require('passport')
 const router = express.Router();
+var Cart = require('../models/cart');
 const User = require('../models/user');
 const Book = require('../models/product');
 const Event = require('../models/events');
@@ -183,6 +184,60 @@ router.get('/Biografico', async (req, res) =>{
     const books = await Book.find({ "category": "Biografic"});
     const Tittle = "Biográfico";
     res.render('products', {books, Tittle});
+});
+
+router.get('/Productos/add/:id', isAuthenticated,function(req, res){
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart? req.session.cart : {});
+    
+    Book.findById(productId,function(err,product){
+        if(err){
+        return res.redirect('/');
+    }
+
+    cart.add(product,product.id);
+    req.session.cart = cart;
+    res.redirect('/');
+    });
+});
+
+router.get('/Productos/addCart/:id', isAuthenticated,function(req, res){
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart? req.session.cart : {});
+    
+    Book.findById(productId,function(err,product){
+        if(err){
+        return res.redirect('/');
+    }
+
+    cart.add(product,product.id);
+    req.session.cart = cart;
+    res.redirect('/Carrito');
+    });
+});
+
+router.get('/Productos/reduce/:id',function(req, res, next){
+    var productId=req.params.id;
+    var cart=new Cart(req.session.cart? req.session.cart : {});
+    cart.reduceByOne(productId);
+    req.session.cart=cart;
+    res.redirect('/Carrito');
+});
+
+router.get('/Productos/remove/:id',function(req, res, next){
+    var productId=req.params.id;
+    var cart=new Cart(req.session.cart? req.session.cart : {});
+    cart.removeItem(productId);
+    req.session.cart=cart;
+    res.redirect('/Carrito');
+});
+
+router.get('/Carrito', (req, res) =>{
+    if(!req.session.cart){
+        return res.render('shoppingCart',{products:null});
+    }
+    var cart = new Cart(req.session.cart);
+    res.render('shoppingCart',{cartProducts:cart.generateArray(), totalPrice:cart.totalPrice});
 });
 
 module.exports = router;
