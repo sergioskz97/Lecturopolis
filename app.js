@@ -68,6 +68,7 @@ app.use(flash());
 
 app.use((req, res, next) => {
     res.locals.user = req.user || null;
+    res.locals.session=req.session;
     next();
 });
 

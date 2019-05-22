@@ -10,7 +10,11 @@
                     <li><a href="/login" class="sidenav-trigger" aria-label="Inicio de sesión"><i class="material-icons">person</i></a></li>
                     <li class="hide-on-med-and-down" aria-label="Eventos"><a href="/eventos">Eventos</a></li>
                     {{#if user}}
-                        <li class="hide-on-med-and-down dropdown-trigger" data-target='dropdownuser'><a>{{user.username}}</a></li>
+                        <li class="hide-on-med-and-down dropdown-trigger" data-target='dropdownuser'><a>{{user.username}}
+                            {{#if session.cart.totalQty}}
+                            ({{session.cart.totalQty}})
+                            {{/if}}
+                            </a></li>
                     {{else}}
                         <li class="hide-on-med-and-down" aria-label="Inicio de sesión"><a href="/login">Login</a></li>
                     {{/if}}
@@ -34,7 +38,11 @@
             <li><a href="/admin_eventos">Eventos</a></li>
             <li><a href="/admin_libro">Libros</a></li>
         {{/ifCond}}
-        <li><a href="">Carrito</a></li>
+        <li><a href="/Carrito">Carrito
+            {{#if session.cart.totalQty}}
+                ({{session.cart.totalQty}})
+            {{/if}}
+        </a></li>
         <li><a href="/logout">Logout</a></li>
     </ul>
 
