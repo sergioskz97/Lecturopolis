@@ -197,7 +197,7 @@ router.get('/Productos/add/:id', isAuthenticated,function(req, res){
 
     cart.add(product,product.id);
     req.session.cart = cart;
-    res.redirect('/');
+    res.redirect('back');
     });
 });
 

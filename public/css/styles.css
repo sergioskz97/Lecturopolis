@@ -6,6 +6,7 @@
 }
 
 html {
+  font-size: 100%;
     box-sizing: border-box;
     color: var(--dark);
 }
@@ -529,7 +530,7 @@ p{
 }
 
 .card-item figure{
-    font-family: "Franklin Gothic Medium";
+  font-family: "Franklin Gothic Medium";
 	color: rgba(89, 89, 89, 1);
 	font-size: 1.2rem;
 	font-weight: 600;
@@ -561,8 +562,12 @@ p{
 
 .card-info .card-info-holder{
     position: absolute;
+    max-width: 100%;
     width: 100%;
+    height: 100%;
     display: flex;
+    white-space: inherit;
+    align-items: center;
 }
 
 .card-info .card-price{
@@ -588,15 +593,18 @@ p{
     display: inline-block;
 }
 
-.card-info .card-price h1{
-    display: block;
-    float: left;
-    clear: both;
-    width: 100%;
-    color: #5e5e5e;
-    font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: -0.2px;
+.card-info .card-price p{
+  margin-bottom: 1%;
+  display: inline-block;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 20px;
+  line-height: 20px;
+  width: 100%;
+  color: #5e5e5e;
+  font-size: 1.5em;
+  font-weight: 8em;
+  letter-spacing: -0.2px;
 }
 
 .card-btn {
