@@ -91,7 +91,7 @@ router.get('/admin_eventos', (req, res) => {
 
 router.post('/admin_eventos', async (req, res) =>{
     let errors = [];
-    const {event, type, date} = req.body;
+    const {event, type, date, place} = req.body;
 
     if(!event){
         console.log("Please insert event name")
