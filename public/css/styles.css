@@ -965,7 +965,6 @@ p{
     padding: 16px 0;
     width: 290px;
     text-align: center;
-  
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;
     -ms-transition: all 0.2s linear;
@@ -1017,4 +1016,90 @@ p{
   .added {
     margin: 0 -50px 0 0 !important;
   }
-  
+
+/* CSS variables profile*/
+
+.card-profile{
+  width: 100%;
+  margin-top: 4%;
+  min-height: 600px;
+  border-radius: 10px;
+  box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
+}
+
+.card-profile .card-left{
+  width: 100%;
+  height: 100%;
+  display: table;
+  color: #f0f0f0;
+  max-height: 600px;
+  text-align: center;
+  background-color: #343434;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: 5px solid #f1c40f;
+}
+
+.card-profile .card-left .card-content{
+  width: 100%;
+  height: 100%;
+  max-height: 600px;
+  display: table-cell;
+	vertical-align: middle;
+}
+
+.card-profile .card-left strong{
+  font-size: 1.5rem;
+}
+
+.card-profile .card-left img{
+  max-width: 100px;
+}
+
+.card-profile .card-right{
+  width: 100%;
+  height: 100%;
+  max-height: 600px;
+  text-align: center;
+  display: table;
+}
+
+.card-profile .card-right .card-content{
+  width: 100%;
+  height: 100%;
+  max-height: 600px;
+  display: table-cell;
+	vertical-align: middle;
+}
+
+.card-profile .card-right .card-content .card-img{ 
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #f1c40f;
+  border-width: 5px;
+}
+
+.card-profile .card-right .card-content strong{ 
+  font-size: 2rem;
+}
+
+.card-profile .card-right .card-content span{ 
+  margin-top: 2%;
+  color: #5E5E5E;
+  padding: .18em 0;
+  font-size: 1.3rem;
+}
+
+.card-profile .card-right .card-content button{ 
+  width: 50%;
+  color: #f0f0f0;
+  font-size: 1.3rem;
+  margin-bottom: 10%;
+  border-radius: 10px;
+  background-color: #343434;
+}
