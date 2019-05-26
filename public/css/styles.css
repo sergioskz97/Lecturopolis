@@ -1175,13 +1175,49 @@ p{
 }
 
 .login-btn:focus {
-	outline: none;
+  outline: none;
+  border-radius: 20px;
+	border: 1px solid #f1c40f;
+	background-color: #f1c40f;
+	color: #333;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
 }
 
 .login-btn.ghost {
   background-color: transparent;
   color: #f1c40f;
 	border-color: #f1c40f;
+}
+
+.login-btn:active{
+  border-radius: 20px;
+	border: 1px solid #f1c40f;
+	background-color: #f1c40f;
+	color: #333;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+.login-btn:visited{
+  border-radius: 20px;
+	border: 1px solid #f1c40f;
+	background-color: #f1c40f;
+	color: #333;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
 }
 
 form {
@@ -1277,8 +1313,8 @@ input {
 
 .overlay {
 	background: #f1c40f;
-	background: -webkit-linear-gradient(to right, #333, #333);
-	background: linear-gradient(to right, #333, #333);
+	background: -webkit-linear-gradient(to right, #343434, #343434);
+	background: linear-gradient(to right, #343434, #343434);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;

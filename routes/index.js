@@ -68,7 +68,7 @@ router.post('/registrarse', async (req, res) => {
     }
 
     else{
-        res.render('signup', {errors});
+        res.render('login', {errors});
     }
 
 });
