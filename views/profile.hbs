@@ -1,0 +1,52 @@
+<html lang="es">
+    {{> head}}
+
+    <body>
+
+        <!-- Header section -->
+        {{> header}}
+
+        <!-- Errors section -->
+        {{> errors}}
+
+        <!-- Content section -->
+
+        <div class="row">
+            <div class="col s10 m10 l6 offset-m1 offset-s1 offset-l3">
+                <div class="card-profile">
+                    <div class="card-left col l4 hide-on-med-and-down">
+                        <div class="card-content" >
+                            
+                        </div>
+                    </div>
+
+                    <div class="card-right col l8 s12 m12">
+                        <div class="card-content">
+                            <div class="card-img" style="background: url({{user.image}}) 50% 0% no-repeat; background-size: cover;">
+                            </div>
+                            <br>
+                            <strong>{{user.username}}</strong>
+                            <br>
+                            <br>
+                            <span>{{user.name}} {{user.surname}}</span>
+                            <br>
+                            <br>
+                            <span>{{user.email}}</span>
+                            <br>
+                            <br>
+                            <br>
+                            <button>Editar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <main>
+           
+        </main>
+
+    </body>
+
+</html>

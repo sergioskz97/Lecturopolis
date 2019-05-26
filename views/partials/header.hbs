@@ -7,12 +7,20 @@
                     <li class="hide-on-med-and-down" aria-label="Contacto"><a href="#">Contacto</a></li>
                     <li><a href="#" data-target="mobile-nav" class="sidenav-trigger" role="menu" aria-label="menu"><i class="material-icons">menu</i></a></li>
                     <li><a href="/" style="color:#ffdf01; font-family: ave; font-size: 30px;" tabindex="1">Lecturópolis</a></li>
-                    <li><a href="/login" class="sidenav-trigger" aria-label="Inicio de sesión"><i class="material-icons">person</i></a></li>
+                    {{#if user}}
+                        <li><a href="" class="sidenav-trigger bubble-noti head-img" style="margin-top: 7%; background: url({{user.image}}) 50% 0% no-repeat; background-size: cover;">
+                            {{#if session.cart.totalQty}}
+                            <span class="bubble-badge">{{session.cart.totalQty}}</span>
+                            {{/if}}
+                        </a></li>
+                    {{else}}
+                        <li><a href="/login" class="sidenav-trigger" aria-label="Inicio de sesión"><i class="material-icons">person</i></a></li>
+                    {{/if}}
                     <li class="hide-on-med-and-down" aria-label="Eventos"><a href="/eventos">Eventos</a></li>
                     {{#if user}}
-                        <li class="hide-on-med-and-down dropdown-trigger" data-target='dropdownuser'><a>{{user.username}}
+                        <li class="hide-on-med-and-down dropdown-trigger bubble-noti" data-target='dropdownuser' tabindex="0"><a>{{user.username}}
                             {{#if session.cart.totalQty}}
-                            ({{session.cart.totalQty}})
+                            <span class="bubble-badge">{{session.cart.totalQty}}</span>
                             {{/if}}
                             </a></li>
                     {{else}}
@@ -33,14 +41,14 @@
     </ul>
 
     <ul id="dropdownuser" class='dropdown-content'>
-        <li><a href="">Perfil</a></li>
+        <li><a href="/perfil">Perfil</a></li>
         {{#ifCond user.username "==" "Admin"}}
             <li><a href="/admin_eventos">Eventos</a></li>
             <li><a href="/admin_libro">Libros</a></li>
         {{/ifCond}}
         <li><a href="/Carrito">Carrito
             {{#if session.cart.totalQty}}
-                ({{session.cart.totalQty}})
+                <span >({{session.cart.totalQty}})</span>
             {{/if}}
         </a></li>
         <li><a href="/logout">Logout</a></li>

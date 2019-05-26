@@ -33,6 +33,8 @@ router.get('/registrarse', (req, res) => {
 router.post('/registrarse', async (req, res) => {
     let errors = [];
     const { username, name, surname, email, password, cpassword } = req.body;
+    const image = "https://res.cloudinary.com/degtjs2lg/image/upload/v1558798007/man_ffddxn.png";
+    const public_id = "man_ffddxn.png";
 
     if(password != cpassword) {
         console.log("Passwords do not match");
@@ -59,14 +61,14 @@ router.post('/registrarse', async (req, res) => {
     }
 
     if(errors.length == 0){
-        const newUser = new User({username, name, surname, email, password});
+        const newUser = new User({username, name, surname, email, password, image, public_id});
         newUser.password = await newUser.encryptPassword(password);
         await newUser.save();
         res.redirect('/login');
     }
 
     else{
-        res.render('signup', {errors});
+        res.render('login', {errors});
     }
 
 });
@@ -232,7 +234,7 @@ router.get('/Productos/remove/:id',function(req, res, next){
     res.redirect('/Carrito');
 });
 
-router.get('/Carrito', (req, res) =>{
+router.get('/Carrito', isAuthenticated, (req, res) =>{
     if(!req.session.cart){
         return res.render('shoppingCart',{products:null});
     }
@@ -240,4 +242,7 @@ router.get('/Carrito', (req, res) =>{
     res.render('shoppingCart',{cartProducts:cart.generateArray(), totalPrice:cart.totalPrice});
 });
 
+router.get('/Perfil', isAuthenticated, (req, res) =>{
+    res.render('profile')
+});
 module.exports = router;
