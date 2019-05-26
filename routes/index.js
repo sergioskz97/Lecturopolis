@@ -17,7 +17,7 @@ cloudinary.config({
 });
 
 router.get('/', async (req, res) => {
-    const books = await Book.find().sort({'_id':-1}).limit(3);
+    const books = await Book.find().sort({'_id':-1}).limit(5);
     res.render('index', {books});
 });
 
