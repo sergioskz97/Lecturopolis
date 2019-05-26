@@ -14,6 +14,7 @@
                         <th role="columnheader">Lugar</th>
                         {{#ifCond user.username "==" "Admin"}}
                             <th role="columnheader">Borrar</th>
+                            <th role="columnheader">Editar</th>
                         {{/ifCond}}
                     </tr>
                 </thead>
@@ -32,6 +33,13 @@
                                             Borrar                                            
                                         </button>
                                     </form>
+                                </td>
+                                <td role="cell"> 
+                                    
+                                        <a class="edit_btn" href="/eventos_editar/{{_id}}" type="submit">
+                                            Editar                                            
+                                        </a> 
+                                      
                                 </td>
                             </tr>
                         {{/each}}

@@ -245,5 +245,4 @@ router.get('/Carrito', isAuthenticated, (req, res) =>{
 router.get('/Perfil', isAuthenticated, (req, res) =>{
     res.render('profile')
 });
-
 module.exports = router;

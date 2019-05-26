@@ -8,7 +8,7 @@
             {{> errors}}
         </main>
 
-        <div class="center-align form-div">
+        <!--<div class="center-align form-div">
             <form action="/login" method="POST" aria-label="Formulario de inicio de sesión">
 
                 <div class="form-header">
@@ -37,7 +37,100 @@
                 <hr style="width: 80%;">
 
             </form>
+        </div>-->
+
+        <div class="cont" id="cont">
+            <div class="form-container sign-up-container">
+                <form action="/registrarse" method="POST" aria-label="Formulario de registro">
+                    <h1>Crear cuenta</h1>
+                    
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Nombre de usuario" name="username" type="text" class="validate" aria-required="true" required>
+                            <label for="username">Nombre de usuario</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <input placeholder="Nombre" name="name" type="text" class="validate" aria-required="true" required>
+                            <label for="name">Nombre</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <input placeholder="Apellidos" name="surname" type="text" class="validate" aria-required="true" required>
+                            <label for="surname">Apellidos</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <input placeholder="Email" name="email" type="email" class="validate" aria-required="true" required>
+                            <label for="email">Email</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <input placeholder="Contraseña" name="password" type="password" class="validate" aria-required="true" required>
+                            <label for="password">Contraseña</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <input placeholder="Confirmar contraseña" name="cpassword" type="password" class="validate" aria-required="true" required>
+                            <label for="cpassword">Confirmar contraseña</label>
+                        </div>
+                    </div>
+                    <button class="login-btn">Registrar</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="/login" method="POST" aria-label="Formulario de inicio de sesión">
+                    <h1>Iniciar sesión</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><img src="https://img.icons8.com/material-outlined/24/000000/facebook.png"></a>
+                        <a href="#" class="social"><img src="https://img.icons8.com/material/24/000000/google-plus.png"></a>
+                        <a href="#" class="social"><img src="https://img.icons8.com/material/24/000000/linkedin.png"></a>
+                    </div>
+                    <span>o usa tu cuenta</span>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Email" name="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <input placeholder="Contraseña" name="password" type="password" class="validate">
+                            <label for="password">Contraseña</label>
+                        </div>
+                    </div>
+                    <button class="login-btn">Iniciar</button>
+                </form>
+            </div>
+            <div class="overlay-container ">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>¡Bienvendio de nuevo!</h1>
+                        <p>Inici sesión y navega sin limitaciones</p>
+                        <button class="ghost login-btn" id="signIn">Iniciar</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>¡Hola amigo!</h1>
+                        <p>Registrate para obetner todo tipo de ventajas</p>
+                        <button class="ghost login-btn" id="signUp">Registrarse</button>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
+        <script>
+            const signUpButton = document.getElementById('signUp');
+            const signInButton = document.getElementById('signIn');
+            const container = document.getElementById('cont');
+
+            signUpButton.addEventListener('click', () => {
+                container.classList.add("right-panel-active");
+            });
+
+            signInButton.addEventListener('click', () => {
+                container.classList.remove("right-panel-active");
+            });
+        </script>
     </body>
 
 </html>
