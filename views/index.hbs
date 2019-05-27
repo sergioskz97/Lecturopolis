@@ -15,7 +15,9 @@
             
         </div>
 
-        <main>
+        
+
+        <div class="pricing-container">
 
             <!-- Principal grid -->
             <div class="gridwr">
@@ -27,62 +29,164 @@
                         <p>
                             El hogar de la buena lectura
                         </p>
-                        <a href="#" class="button">Más información</a>
+                        <a href="#" class="box-btn">Más información</a>
                     </header>
                     <div class="top-box top-box-a" tabindex="0">
                         <h4>Suscripción</h4>
                         <p class="price">20€/año</p>
-                        <a href="" class="button">Comenzar</a>
+                        <a href="" class="box-btn">Comenzar</a>
                     </div>
                     <div class="top-box top-box-b" tabindex="0">
                         <h4>Suscripción vip</h4>
-                        <p class="price">$40€/año</p>
-                        <a href="" class="button">Comenzar</a>
+                        <p class="price">40€/año</p>
+                        <a href="" class="box-btn">Comenzar</a>
                     </div>
                 </section>
+            </div>
 
-                <section class="boxes">
-                    <div class="box" tabindex="0">
-                        <i class="material-icons large" aria-label="Icono personas">people</i>
-                        <h3>Apoyanos</h3>
-                        <p>Puedes realizar donaciones para ayudar en el desarrollo de esta aplicación.</p>
-                    </div>
-    
-                    <div class="box" tabindex="0">
-                        <i class="material-icons large" aria-label="Icono accesibilidad">accessibility</i>
-                        <h3>Accesibilidad</h3>
-                        <p>Esta página tiene como objetivo llegar a todo tipo de públicos por lo cual la accesibilidad es muy importante para nosotros.</p>
-                    </div>
-                </section>
-
-                <br>
-                <h1 tabindex="0">Productos más recientes</h1>
+            <main>
+                <h1 tabindex="0" style="margin-top:10%;">Productos más recientes</h1>
                 <hr>
                 <p tabindex="0">Los productos más novedosos del último mes a un solo click de distancia.</p>
 
                 <!-- Products section -->
-                <section class="product-boxes">
-                    {{#each books}}
-                    <div class="box-product" tabindex="0">
-                        <div class="product-item">
-                            <figure>
-                                <img src="{{image}}" alt="portada del libro {{tittle}}">
-                                <figcaption>{{tittle}}</figcaption>
-                                <figcaption>{{price}}€</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                    {{/each}}
-                </section>
-            </div>
-            <!-- End of principal grid -->
 
-        </main>
+                <style>
+                    .swiper-container {
+                        margin-top: 5%;
+                        width: 70%;
+                        height: 500px;
+                        min-width: 325px;
+                    }
+
+                    .swiper-slide {
+                        background-position: center;
+                        background-size: cover;
+                        width: 325px;
+                        height: 498.5px;
+                    }
+                </style>
+
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        {{#each books}}
+                            <img src="{{image}}" class="swiper-slide" alt="portada del libro {{tittle}}" tabindex="0">
+                        {{/each}}
+                    </div>
+                </div>
+                    
+                
+                <!-- End of principal grid -->
+
+            </main>
+
+            <section class="pricing-section bg-1">
+                <h1 class="pricing-section-title" tabindex="0">Información</h1>               
+
+                <div class="pricing">
+    
+                    <div class="pricing-item" tabindex="0">
+                        <h1 class="pricing-title">Apoyanos</h1>
+
+                        <div class="pricing-price">
+                            <span class="pricing-currancy">Dona lo que puedas</span>
+                        </div>
+
+                        <p class="pricing-sentence">
+                            <i class="material-icons large" aria-label="Icono personas">people</i>
+                            <br>
+                            Puedes realizar donaciones para ayudar en el desarrollo de esta aplicación.
+                        </p>
+
+                        <button class="pricing-action" tabindex="0">Donar</button>
+                    </div>
+
+                    <div class="pricing-item" tabindex="0">
+                        <h1 class="pricing-title">Accesibilidad</h1>
+
+                        <div class="pricing-price">
+                            <span class="pricing-currancy">Somos accesibles</span>
+                        </div>
+
+                        <p class="pricing-sentence">
+                            <i class="material-icons large" aria-label="Icono accesibilidad">accessibility</i>
+                            <br>
+                            Esta página tiene como objetivo llegar a todo tipo de públicos por lo cual la accesibilidad es muy importante para nosotros.
+                        </p>
+
+                        <button class="pricing-action" tabindex="0">Leer más</button>
+                    </div>
+
+                    <div class="pricing-item" tabindex="0">
+                        <h1 class="pricing-title">Sugerencias</h1>
+
+                        <div class="pricing-price">
+                            <span class="pricing-currancy">Ayudanos a mejorar</span>
+                        </div>
+
+                        <p class="pricing-sentence">
+                            <i class="material-icons large" aria-label="Icono accesibilidad">email</i>
+                            <br>
+                            Contactanos por email y cuentanos tus inquietudes. Tus opiniones son importantes para nosotros.
+                        </p>
+
+                        <button class="pricing-action" tabindex="0">Contactar</button>
+                    </div>
+
+                    <div class="pricing-item" tabindex="0">
+                        <h1 class="pricing-title">Historia</h1>
+
+                        <div class="pricing-price">
+                            <span class="pricing-currancy">¿Quienes somos?</span>
+                        </div>
+
+                        <p class="pricing-sentence">
+                            <i class="material-icons large" aria-label="Icono accesibilidad">business</i>
+                            <br>
+                            Lecturopolis es un proyecto canario para fomentar la lectura en la gente independientemente de su edad.
+                        </p>
+
+                        <button class="pricing-action" tabindex="0">Leer más</button>
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+
+        
+
+        
 
         <!-- Footer section -->
         <footer>
 
         </footer>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows : true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            });
+
+            swiper.slideTo(2, false,false);
+        </script>
+        
     </body>
 
 </html>
