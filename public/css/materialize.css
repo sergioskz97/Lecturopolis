@@ -4287,8 +4287,8 @@ nav {
   color: #ffdf01;
   line-height: 56px;
   box-shadow: var(--shadow);
-  border-bottom: 5px solid #ffdf01;
-  background-color: #1a1a1d;
+  border-bottom: 5px solid #66fcf1;
+  background-color: #0b0c10;
 }
 
 nav.nav-extended {
@@ -5561,7 +5561,7 @@ button.btn-floating {
 }
 
 .dropdown-content {
-  background-color: #fff;
+  background-color: #1f2833;
   margin: 0;
   display: none;
   min-width: 100px;
@@ -5590,7 +5590,7 @@ button.btn-floating {
 }
 
 .dropdown-content li:hover, .dropdown-content li.active {
-  background-color: #eee;
+  background-color: #0b0c10;
 }
 
 .dropdown-content li:focus {
@@ -5604,7 +5604,7 @@ button.btn-floating {
 
 .dropdown-content li > a, .dropdown-content li > span {
   font-size: 16px;
-  color: #333;
+  color: #fff;
   display: block;
   line-height: 22px;
   padding: 14px 16px;

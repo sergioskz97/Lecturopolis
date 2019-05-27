@@ -15,47 +15,76 @@
             
         </div>
 
+        
+
         <div class="pricing-container">
+
+            <!-- Principal grid -->
+            <div class="gridwr">
+                <section class="top-container">
+                    <header class="showcase" tabindex="0">
+                        <h1>
+                            Lecturópolis
+                        </h1>
+                        <p>
+                            El hogar de la buena lectura
+                        </p>
+                        <a href="#" class="box-btn">Más información</a>
+                    </header>
+                    <div class="top-box top-box-a" tabindex="0">
+                        <h4>Suscripción</h4>
+                        <p class="price">20€/año</p>
+                        <a href="" class="box-btn">Comenzar</a>
+                    </div>
+                    <div class="top-box top-box-b" tabindex="0">
+                        <h4>Suscripción vip</h4>
+                        <p class="price">40€/año</p>
+                        <a href="" class="box-btn">Comenzar</a>
+                    </div>
+                </section>
+            </div>
+
+            <main>
+                <h1 tabindex="0" style="margin-top:10%;">Productos más recientes</h1>
+                <hr>
+                <p tabindex="0">Los productos más novedosos del último mes a un solo click de distancia.</p>
+
+                <!-- Products section -->
+
+                <style>
+                    .swiper-container {
+                        margin-top: 5%;
+                        width: 70%;
+                        height: 500px;
+                        min-width: 325px;
+                    }
+
+                    .swiper-slide {
+                        background-position: center;
+                        background-size: cover;
+                        width: 325px;
+                        height: 498.5px;
+                    }
+                </style>
+
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        {{#each books}}
+                            <img src="{{image}}" class="swiper-slide" alt="portada del libro {{tittle}}" tabindex="0">
+                        {{/each}}
+                    </div>
+                </div>
+                    
+                
+                <!-- End of principal grid -->
+
+            </main>
+
             <section class="pricing-section bg-1">
-                <h1 class="pricing-section-title">Ofertas</h1>
+                <h1 class="pricing-section-title" tabindex="0">Información</h1>               
 
                 <div class="pricing">
     
-                    <div class="pricing-item" tabindex="0">
-                        <h1 class="pricing-title">Sub básica</h1>
-
-                        <div class="pricing-price">
-                            <span class="pricing-currancy">20€</span>
-                        </div>
-
-                        <p class="pricing-sentence">Tarifa simple de usuario</p>
-
-                        <ul class="pricing-feature-list">
-                            <li>Acceso a la compra de libros</li>
-                        </ul>
-
-                        <button class="pricing-action" tabindex="0">Elegir plan</button>
-                    </div>
-
-                    <div class="pricing-item" tabindex="0">
-                        <h1 class="pricing-title">Suscripción VIP</h1>
-
-                        <div class="pricing-price">
-                            <span class="pricing-currancy">40€</span>
-                        </div>
-
-                        <p class="pricing-sentence">Tarifa VIP de usuario</p>
-
-                        <ul class="pricing-feature-list">
-                            <li>Acceso a la compra de libros</li>
-                            <li>Acceso a la reserva de libros</li>
-                            <li>Avisos de nuevos estrenos</li>
-                            <li>Avisos de Eventos</li>
-                        </ul>
-
-                        <button class="pricing-action" tabindex="0">Elegir plan</button>
-                    </div>
-
                     <div class="pricing-item" tabindex="0">
                         <h1 class="pricing-title">Apoyanos</h1>
 
@@ -88,6 +117,38 @@
                         <button class="pricing-action" tabindex="0">Leer más</button>
                     </div>
 
+                    <div class="pricing-item" tabindex="0">
+                        <h1 class="pricing-title">Sugerencias</h1>
+
+                        <div class="pricing-price">
+                            <span class="pricing-currancy">Ayudanos a mejorar</span>
+                        </div>
+
+                        <p class="pricing-sentence">
+                            <i class="material-icons large" aria-label="Icono accesibilidad">email</i>
+                            <br>
+                            Contactanos por email y cuentanos tus inquietudes. Tus opiniones son importantes para nosotros.
+                        </p>
+
+                        <button class="pricing-action" tabindex="0">Contactar</button>
+                    </div>
+
+                    <div class="pricing-item" tabindex="0">
+                        <h1 class="pricing-title">Historia</h1>
+
+                        <div class="pricing-price">
+                            <span class="pricing-currancy">¿Quienes somos?</span>
+                        </div>
+
+                        <p class="pricing-sentence">
+                            <i class="material-icons large" aria-label="Icono accesibilidad">business</i>
+                            <br>
+                            Lecturopolis es un proyecto canario para fomentar la lectura en la gente independientemente de su edad.
+                        </p>
+
+                        <button class="pricing-action" tabindex="0">Leer más</button>
+                    </div>
+
                 </div>
 
             </section>
@@ -95,41 +156,7 @@
 
         
 
-        <main>
-           
-            <h1 tabindex="0">Productos más recientes</h1>
-            <hr>
-            <p tabindex="0">Los productos más novedosos del último mes a un solo click de distancia.</p>
-
-            <!-- Products section -->
-
-            <style>
-                .swiper-container {
-                    margin-top: 5%;
-                    width: 60%;
-                    height: 600px;
-                }
-
-                .swiper-slide {
-                    background-position: center;
-                    background-size: cover;
-                    width: 325px;
-                    height: 498.5px;
-                }
-            </style>
-
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    {{#each books}}
-                        <img src="{{image}}" class="swiper-slide" alt="portada del libro {{tittle}}" tabindex="0">
-                    {{/each}}
-                </div>
-            </div>
-                
-            
-            <!-- End of principal grid -->
-
-        </main>
+        
 
         <!-- Footer section -->
         <footer>
