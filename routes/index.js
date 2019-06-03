@@ -21,6 +21,10 @@ router.get('/', async (req, res) => {
     res.render('index', {books});
 });
 
+router.get('/contacto', (req,res) =>{
+    res.render('contact');
+});
+
 router.get('/eventos', async (req, res) => {
     const events = await Event.find();
     res.render('events', { events });

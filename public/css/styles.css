@@ -430,18 +430,32 @@ li a:hover{
 /* Login css variables */
 
 .form-div{
-    width: 90%;
+    width: 100%;
     flex: 1 0 auto;
     margin: 5% auto;  
-    max-width: 400px;
+    max-width: 600px;
+    height: 100%;
+    max-height: 900px;
     text-align: center;
+    background: #fff;
     border-radius: 15px;
-    background: #f0f0f0;
     box-shadow: var(--shadow);
 }
 
+.form-div form{
+  border-radius: 15px;
+}
+
+.form-div h1{
+  color: #0b0c10;
+}
+
+.form-div span{
+  color: #0b0c10;
+}
+
 .form-div a{
-    color: #ffdf01;
+    color: #0b0c10;
 }
 
 .form-btn{
