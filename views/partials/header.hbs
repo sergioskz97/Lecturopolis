@@ -31,38 +31,38 @@
         </div>
     </nav>
 
-    <ul id="dropdowncat" class='dropdown-content'>
-        <li><a href="/Terror" role="menuitem" aria-label="Terror">Terror</a></li>
-        <li><a href="/Aventura" role="menuitem" aria-label="Aventura" tabindex="3">Aventura</a></li>
-        <li><a href="/Erotico" role="menuitem" aria-label="Erótico" tabindex="4">Erótico</a></li>
-        <li><a href="/Romantico" role="menuitem" aria-label="Romántico" tabindex="5">Romántico</a></li>
-        <li><a href="/Historico" role="menuitem" aria-label="Historico" tabindex="6">Historico</a></li>
-        <li><a href="/Biografico" role="menuitem" aria-label="Biografico" tabindex="7">Biografico</a></li>
+    <ul id="dropdowncat" class='dropdown-content' role="menu" tabindex="0">
+        <li ><a href="/Terror" role="menuitem" aria-label="Terror" tabindex="0">Terror</a></li>
+        <li><a href="/Aventura" role="menuitem" aria-label="Aventura" tabindex="0">Aventura</a></li>
+        <li><a href="/Erotico" role="menuitem" aria-label="Erótico" tabindex="0">Erótico</a></li>
+        <li><a href="/Romantico" role="menuitem" aria-label="Romántico" tabindex="0">Romántico</a></li>
+        <li><a href="/Historico" role="menuitem" aria-label="Historico" tabindex="0">Historico</a></li>
+        <li><a href="/Biografico" role="menuitem" aria-label="Biografico" tabindex="0">Biografico</a></li>
     </ul>
 
-    <ul id="dropdownuser" class='dropdown-content'>
-        <li><a href="/perfil">Perfil</a></li>
+    <ul id="dropdownuser" class='dropdown-content' role="menu" tabindex="0">
+        <li role="menuitem" tabindex="0"><a href="/perfil">Perfil</a></li>
         {{#ifCond user.username "==" "Admin"}}
-            <li><a href="/admin_eventos">Eventos</a></li>
-            <li><a href="/admin_libro">Libros</a></li>
+            <li role="menuitem" tabindex="0"><a href="/admin_eventos">Eventos</a></li>
+            <li role="menuitem" tabindex="0"><a href="/admin_libro">Libros</a></li>
         {{/ifCond}}
-        <li><a href="/Carrito">Carrito
+        <li role="menuitem" tabindex="0"><a href="/Carrito">Carrito
             {{#if session.cart.totalQty}}
                 <span >({{session.cart.totalQty}})</span>
             {{/if}}
         </a></li>
-        <li><a href="/logout">Logout</a></li>
+        <li role="menuitem" tabindex="0"><a href="/logout">Logout</a></li>
     </ul>
 
-    <ul class="sidenav" id="mobile-nav">
-        <li><a href="/Terror" role="menuitem" aria-label="Terror">Terror</a></li>
-        <li><a href="/Aventura" role="menuitem" aria-label="Aventura">Aventura</a></li>
-        <li><a href="/Erotico" role="menuitem" aria-label="Erótico">Erótico</a></li>
-        <li><a href="/Romantico" role="menuitem" aria-label="Romántico">Romántico</a></li>
-        <li><a href="/Historico" role="menuitem" aria-label="Historico">Historico</a></li>
-        <li><a href="/Biografico" role="menuitem" aria-label="Biografico">Biografico</a></li>
-        <li><a href="/eventos" role="menuitem" aria-label="Eventos">Eventos</a></li>
-        <li><a href="#">Contacto</a></li>
+    <ul class="sidenav" id="mobile-nav" role="menu">
+        <li><a href="/Terror" role="menuitem" tabindex="-1" aria-label="Terror">Terror</a></li>
+        <li><a href="/Aventura" role="menuitem" tabindex="-1" aria-label="Aventura">Aventura</a></li>
+        <li><a href="/Erotico" role="menuitem" tabindex="-1" aria-label="Erótico">Erótico</a></li>
+        <li><a href="/Romantico" role="menuitem" tabindex="-1" aria-label="Romántico">Romántico</a></li>
+        <li><a href="/Historico" role="menuitem" tabindex="-1" aria-label="Historico">Historico</a></li>
+        <li><a href="/Biografico" role="menuitem" tabindex="-1" aria-label="Biografico">Biografico</a></li>
+        <li><a href="/eventos" role="menuitem" tabindex="-1" aria-label="Eventos">Eventos</a></li>
+        <li><a href="/contacto" role="menuitem"  tabindex="-1">Contacto</a></li>
     </ul>
 </header>
 
@@ -70,6 +70,10 @@
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.sidenav');
         var instances = M.Sidenav.init(elems    );
+    });
+
+    $(document).on("focus", ".dropdown-trigger", function (e) {
+        e.open();
     });
 
     $('.dropdown-trigger').dropdown();
