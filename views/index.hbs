@@ -11,8 +11,14 @@
 
         <!-- Content section -->
 
-        <div class="main-head hide-on-med-and-down">
-            
+        <div class="index-head hide-on-med-and-down">
+            <div class="carousel carousel-slider center">
+                <h1 class="carousel-item">"El misterio de la vida no es un problema a resolver, sino una realidad a experimentar" (Duna, Frank Herbert)</h1>
+                <h1 class="carousel-item">"Estar solo no tiene nada que ver con cuantas personas hay alrededor" (Revolutionary Road, Richard Yates)</h1>
+                <h1 class="carousel-item">"Sea un hombre o sea más que un hombre. Sea firme con su propósito y firme como una piedra" (Frankestein, Mary Shelley)</h1>
+                <h1 class="carousel-item">"Tengo esperanza o podría no vivir" (La isla del doctor Moreau, H.G. Wells)</h1>
+                <h1 class="carousel-item">"Si buscas la perfección nunca estarás contento" (Anna Karenina, Leo Tolstoy)</h1>
+            </div>
         </div>
 
         
@@ -98,7 +104,7 @@
                             Puedes realizar donaciones para ayudar en el desarrollo de esta aplicación.
                         </p>
 
-                        <button class="pricing-action" tabindex="0">Donar</button>
+                        <a class="pricing-action" href="https://www.paypal.com/es/home" tabindex="0">Donar</a>
                     </div>
 
                     <div class="pricing-item" tabindex="0">
@@ -114,7 +120,7 @@
                             Esta página tiene como objetivo llegar a todo tipo de públicos por lo cual la accesibilidad es muy importante para nosotros.
                         </p>
 
-                        <button class="pricing-action" tabindex="0">Leer más</button>
+                        <a class="pricing-action" href="https://docs.google.com/document/d/1rKJQ4G1jM2xV0PM9wGsLpSRb2XXYjFdFh1J5revFjWI/edit" tabindex="0">Leer más</a>
                     </div>
 
                     <div class="pricing-item" tabindex="0">
@@ -130,7 +136,7 @@
                             Contactanos por email y cuentanos tus inquietudes. Tus opiniones son importantes para nosotros.
                         </p>
 
-                        <button class="pricing-action" tabindex="0">Contactar</button>
+                        <a class="pricing-action" href="/contacto" tabindex="0">Contactar</a>
                     </div>
 
                     <div class="pricing-item" tabindex="0">
@@ -146,7 +152,7 @@
                             Lecturopolis es un proyecto canario para fomentar la lectura en la gente independientemente de su edad.
                         </p>
 
-                        <button class="pricing-action" tabindex="0">Leer más</button>
+                        <a class="pricing-action" href="/contacto" tabindex="0">Leer más</a>
                     </div>
 
                 </div>
@@ -167,6 +173,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
         <script>
+            $('.carousel').carousel();
+            setInterval(function() {
+                $('.carousel').carousel('next');
+            }, 15000);
+
             var swiper = new Swiper('.swiper-container', {
                 effect: 'coverflow',
                 grabCursor: true,

@@ -8411,8 +8411,14 @@ input[type=range]::-ms-thumb {
   height: 100%;
   min-height: 400px;
   position: absolute;
-  top: 0;
+  top: 30%;
   left: 0;
+}
+
+.carousel.carousel-slider .carousel-item h1 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
 }
 
 .carousel.carousel-slider .carousel-item h2 {

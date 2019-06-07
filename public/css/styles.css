@@ -271,7 +271,7 @@ li a:hover{
   .showcase {
     grid-area: showcase;
     min-height: 400px;
-    background: url(https://image.ibb.co/kYJK8x/showcase.jpg);
+    background: url(https://res.cloudinary.com/degtjs2lg/image/upload/v1559932651/descarga_1_myikug.png);
     background-size: cover;
     background-position: center;
     padding: 3rem;
@@ -508,6 +508,7 @@ li a:hover{
 }
 
 .main-head h1{
+    font-family: ave;
     margin: 0;
     color: #f0f0f0;
     position: absolute;
@@ -515,6 +516,27 @@ li a:hover{
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+}
+
+.index-head{
+  height: 300px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
+  background-image: url("https://res.cloudinary.com/degtjs2lg/image/upload/v1557852465/header-image_sfoccw.png");
+}
+
+.index-head h1{
+  font-family: ave;
+  font-size: 2rem;
+  margin: 0;
+  color: #f0f0f0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
 /* CSS custom buttons */
