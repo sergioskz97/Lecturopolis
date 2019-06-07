@@ -10,9 +10,7 @@
 
             <div class="form-div">
                 <form action="/admin_libro" method="POST" enctype="multipart/form-data" aria-label="Formulario para añadir libros">
-                    <div class="form-header">
-                        <h1>Admin</h1>
-                    </div>
+                    <h1>Admin</h1>
 
                     <div class="row">
 
@@ -47,19 +45,18 @@
 
                         <div class="file-field input-field col s12">
                             <div class="btn">
-                                <span>Foto</span>
+                                Foto
                                 <input type="file" name="image" aria-label="Seleccionar imagen">
                             </div>
-                            <div class="file-path-wrapper">
+                            <div class="file-path-wrapper" style="color: #fff;">
                                 <input class="file-path validate" type="text">
                             </div>
                         </div>
 
                     </div>
                     
-                    <button class="form-btn">Publicar</button>
+                    <button class="login-btn">Publicar</button>
 
-                    <hr style="width: 80%;">
                 </form>
             </div>
 
@@ -80,12 +77,12 @@
                             <td role="cell">{{tittle}}</td>
                             <td role="cell">{{price}}</td>
                             <td role="cell">
-                                <form action="/admin_libro/borrar/{{_id}}" method="POST">
+                                <form action="/admin_libro/borrar/{{_id}}" method="POST" style="background: #0b0c10">
                                     <button class="delete_btn" type="submit">Borrar</button>
                                 </form>
                             </td>
                             <td role="cell">
-                                <form action="/admin_libro/editar/{{_id}}" method="POST">
+                                <form action="/admin_libro/editar/{{_id}}" method="POST" style="background: #0b0c10">
                                     <button class="edit_btn" type="submit">Editar</button>
                                 </form>
                             </td>

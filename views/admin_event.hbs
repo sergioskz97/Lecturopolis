@@ -8,39 +8,37 @@
             {{> errors}}
         </main>
 
-        <div class="center-align form-div">
-            <form action="/admin_eventos" method="POST" aria-label="Formulario para añadir eventos">
-                <div class="form-header">
+        <div class="row">
+            <div class="center-align form-div">
+                <form action="/admin_eventos" method="POST" aria-label="Formulario para añadir eventos">
                     <h1>Admin</h1>
-                </div>
 
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="Nombre del evento" name="event" type="text" class="validate" aria-required="true" required>
-                        <label for="event" id="eventlabel">Nombre del evento</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Nombre del evento" name="event" type="text" class="validate" aria-required="true" required>
+                            <label for="event" id="eventlabel">Nombre del evento</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <input placeholder="Tipo de evento" name="type" type="text" class="validate" aria-required="true" required>
+                            <label for="type">Tipo de evento</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <input placeholder="Fecha del evento" name="date" type="text" class="validate" aria-required="true" required>
+                            <label for="date">Fecha del evento</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <input placeholder="Lugar del evento" name="place" type="text" class="validate" aria-required="true" required>
+                            <label for="place">Lugar del evento</label>
+                        </div>
                     </div>
+                    
+                    <button class="login-btn" aria-label="Actualizar">Actualizar</button>
+                </form>
 
-                    <div class="input-field col s12">
-                        <input placeholder="Tipo de evento" name="type" type="text" class="validate" aria-required="true" required>
-                        <label for="type">Tipo de evento</label>
-                    </div>
-
-                    <div class="input-field col s12">
-                        <input placeholder="Fecha del evento" name="date" type="text" class="validate" aria-required="true" required>
-                        <label for="date">Fecha del evento</label>
-                    </div>
-
-                    <div class="input-field col s12">
-                        <input placeholder="Lugar del evento" name="place" type="text" class="validate" aria-required="true" required>
-                        <label for="place">Lugar del evento</label>
-                    </div>
-                </div>
-                
-                <button class="form-btn" aria-label="Actualizar">Actualizar</button>
-
-                <hr style="width: 80%;">
-            </form>
-
+            </div>
         </div>
     </body>
 </html>

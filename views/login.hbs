@@ -8,40 +8,42 @@
             {{> errors}}
         </main>
 
-        <div class="center-align form-div hide-on-large-only">
-            <form action="/login" method="POST" aria-label="Formulario de inicio de sesión">
+        <div class="row">
+            <div class="center-align form-div hide-on-large-only col s10 offset-s1">
+                <form action="/login" method="POST" aria-label="Formulario de inicio de sesión">
 
-                <h1>Login</h1>
+                    <h1>Login</h1>
 
-                <div class="social-container">
-                    <a href="#" class="social"><img src="https://img.icons8.com/material-outlined/24/000000/facebook.png"></a>
-                    <a href="#" class="social"><img src="https://img.icons8.com/material/24/000000/google-plus.png"></a>
-                    <a href="#" class="social"><img src="https://img.icons8.com/material/24/000000/linkedin.png"></a>
-                </div>
-                <span>o usa tu cuenta</span>
+                    <div class="social-container">
+                        <a href="#" class="social"><img src="https://img.icons8.com/material-outlined/24/000000/facebook.png"></a>
+                        <a href="#" class="social"><img src="https://img.icons8.com/material/24/000000/google-plus.png"></a>
+                        <a href="#" class="social"><img src="https://img.icons8.com/material/24/000000/linkedin.png"></a>
+                    </div>
+                    <span>o usa tu cuenta</span>
 
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="Email" name="email" type="email" class="validate">
-                        <label for="email">Email</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Email" name="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <input placeholder="Contraseña" name="password" type="password" class="validate">
+                            <label for="password">Contraseña</label>
+                        </div>
                     </div>
 
-                    <div class="input-field col s12">
-                        <input placeholder="Contraseña" name="password" type="password" class="validate">
-                        <label for="password">Contraseña</label>
-                    </div>
-                </div>
+                    <a href="/registrarse" class="col s6">Registrate</a>
 
-                <a href="/registrarse" class="col s6">Registrate</a>
+                    <br>
 
-                <br>
+                    <button class="login-btn">Iniciar sesión</button>
 
-                <button class="login-btn">Iniciar sesión</button>
+                    <br>
+                    <br>
 
-                <br>
-                <br>
-
-            </form>
+                </form>
+            </div>
         </div>
 
         <div class="cont hide-on-med-and-down" id="cont">
