@@ -532,11 +532,6 @@ li a:hover{
   font-size: 2rem;
   margin: 0;
   color: #f0f0f0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
 }
 
 /* CSS custom buttons */
@@ -802,7 +797,7 @@ li a:hover{
   .cart-container {
     font-family: "Open Sans", sans-serif;
     margin: 0 auto;
-    width: 980px;
+    width: 95%;
     border-radius: 15px;
   }
   
@@ -855,6 +850,7 @@ li a:hover{
   
   .product header,
   .product .content {
+    border-radius: 15px;
     background-color: #fff;
     float: left;    
   }
@@ -916,6 +912,8 @@ li a:hover{
   }
   
   .product footer.content {
+    border-radius: 15px;
+
     height: 50px;
     margin: 6px 0 0 0;
     padding: 0;
