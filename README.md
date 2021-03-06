@@ -1,8 +1,7 @@
 <h1 align="center"> Lecturópolis </h1>
 
-<p align="center">
 [![Contributors][contributors-shield]][contributors-url]
-</p>
+
 <p> [ES]Lecturópolis es una página web destinada a los entusiastas de los libros en donde pueden encontrar una comunidad acorde con sus gustos. </p>
 <p> [EN]Lecturópolis is a web page aimed at book enthusiasts where they can find a community according to their tastes. </p>
 
